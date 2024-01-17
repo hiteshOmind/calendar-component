@@ -3,6 +3,8 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@chakra-ui/color-mode": "^2.2.0",
+    "@chakra-ui/icons": "^2.1.1",
     "@chakra-ui/react": "^2.8.2",
     "@emotion/react": "^11.11.3",
     "@emotion/styled": "^11.11.0",
@@ -10,6 +12,7 @@
     "@testing-library/react": "^13.4.0",
     "@testing-library/user-event": "^13.5.0",
     "@typescript-eslint/parser": "^6.19.0",
+    "chakra-ui-steps": "^2.1.0",
     "flatpickr": "^4.6.13",
     "framer-motion": "^10.18.0",
     "react": "^18.2.0",
