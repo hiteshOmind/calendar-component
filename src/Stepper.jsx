@@ -88,7 +88,7 @@ const CustomStepperHelper = ({ steps }) => {
                 </Text>
                 <Text
                   fontSize={16}
-                  fontWeight={index === activeStep ? "bold" : "normal"}
+                  fontWeight={"bold"}
                   color={index === activeStep ? "#1d2939" : "#475467"}
                 >
                   {step.description}
