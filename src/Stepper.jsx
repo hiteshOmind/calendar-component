@@ -98,7 +98,7 @@ const CustomStepperHelper = ({ steps }) => {
         </Box>
       </HStack>
 
-      <Box style={{ width: "100%", padding: 20 }}>
+      <Box style={{ width: "100%", padding: "24px" }}>
         {activeStep < steps.length ? (
           steps[activeStep].content
         ) : (
