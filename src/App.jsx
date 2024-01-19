@@ -5,6 +5,7 @@ import LineStepper from "./Stepper.jsx";
 // ! To use Chakra-ui-steps you need to extend the chakra theme
 import { ChakraProvider, extendTheme } from "@chakra-ui/react";
 import { StepsTheme as Steps } from "chakra-ui-steps";
+import Testimonial from "./Testimonial.jsx";
 
 const theme = extendTheme({
   components: {
@@ -50,6 +51,12 @@ function App() {
         <br />
         <div>
           <LineStepper steps={steps} />
+        </div>
+        <br />
+        <br />
+        <br />
+        <div>
+          <Testimonial/>
         </div>
       </div>
     </ChakraProvider>
