@@ -6,6 +6,7 @@ import LineStepper from "./Stepper.jsx";
 import { ChakraProvider, extendTheme } from "@chakra-ui/react";
 import { StepsTheme as Steps } from "chakra-ui-steps";
 import CustomCarousel from "./Testimonial.jsx";
+import LogoUploader from "./DragAndDropBox.jsx";
 
 const theme = extendTheme({
   components: {
@@ -80,7 +81,9 @@ function App() {
         </div>
         <br />
         <br />
+        <LogoUploader/>
         <br />
+        <br/>
         <div style={{backgroundColor:"green", paddingTop:"20px", paddingBottom:"20px"}}>
           <CustomCarousel ratingData={testimonials}/>
         </div>
