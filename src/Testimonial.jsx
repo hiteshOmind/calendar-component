@@ -4,7 +4,7 @@ import { useState } from "react";
 import { Image, Text } from "@chakra-ui/react";
 import { FaStar } from "react-icons/fa";
 
-export const TestimonialCard = ({
+const TestimonialCard = ({
   rating,
   name,
   designation,
@@ -12,7 +12,7 @@ export const TestimonialCard = ({
   image,
 }) => {
   return (
-    <Box p={"20px"} borderWidth="1px" borderRadius="lg" boxShadow="lg">
+    <Box minHeight={"max-content"} height={"100%"} p={"20px"} borderWidth="1px" borderRadius="lg" boxShadow="lg" bg={"#ffffff"}>
       <Flex justifyContent={"space-between"}>
         <Flex flex={"start"}>
           <Image
@@ -25,10 +25,10 @@ export const TestimonialCard = ({
           <Box
             style={{
               display: "flex",
-              justifyContent: "flex-start",
+              justifyContent: "center",
               alignItems: "flex-start",
               flexDirection: "column",
-              gap: "12px",
+              gap: "2px",
             }}
           >
             <Text fontSize={14} fontWeight={600}>
@@ -39,18 +39,18 @@ export const TestimonialCard = ({
             </Text>
           </Box>
         </Flex>
-        <Flex mt={3}>
+        <Flex alignItems={"center"}>
           {[...Array(rating)]?.map((_, index) => (
             <Icon as={FaStar} key={index} color="yellow.500" boxSize={4} />
           ))}
         </Flex>
       </Flex>
 
-      <Box mt={3}>
-        <Text fontSize={12} color={"#475467"} fontWeight={400}>
+      <Flex flex="start" mt={6} pb={8}>
+        <Text textAlign={"left"} fontSize={12} color={"#475467"} fontWeight={400}>
           {description}
         </Text>
-      </Box>
+      </Flex>
     </Box>
   );
 };
@@ -76,7 +76,7 @@ const CustomCarousel = ({ ratingData, sideNavigation = false }) => {
 
   return (
     <Box position="relative" overflow="hidden">
-      <Box position="relative" height="300px" overflow="hidden">
+      <Box position="relative" height="100%" overflow="hidden">
         <SlideFade in={true} offsetX="0px" offsetY="0px">
           <Flex
             pl={25}
@@ -103,20 +103,17 @@ const CustomCarousel = ({ ratingData, sideNavigation = false }) => {
         </SlideFade>
       </Box>
       <Box
-        position="absolute"
-        bottom="10px"
-        left="50%"
-        transform="translateX(-50%)"
         display="flex"
         justifyContent="center"
         alignItems="center"
+        marginTop={12}
       >
         {ratingData?.map((_, index) => (
           <Icon
             key={index}
             as={FaCircle}
-            color={currentIndex === index ? "blue.500" : "gray.300"}
-            boxSize={2}
+            color={currentIndex === index ? "#fff" : "gray.500"}
+            boxSize={currentIndex === index ? 4 : 3}
             mx={1}
             onClick={() => handleDotClick(index)}
             cursor="pointer"
