@@ -41,25 +41,25 @@ function BusinessInfoForm() {
         <Box mt={"40px"} display={"flex"} flexDir={"column"} gap={"16px"}>
           <Box display={"flex"} justifyContent={"space-between"} gap={"16px"}>
             <FormControl>
-              <FormLabel marginBottom={"4px"}>Address Line 1</FormLabel>
+              <FormLabel fontSize={"14px"} color={"rgba(102, 112, 133, 1)"} marginBottom={"4px"}>Address Line 1</FormLabel>
               <Input variant="outline" placeholder="Outline" />
             </FormControl>
             <FormControl>
-              <FormLabel marginBottom={"4px"}>Address Line 2</FormLabel>
+              <FormLabel fontSize={"14px"} color={"rgba(102, 112, 133, 1)"} marginBottom={"4px"}>Address Line 2</FormLabel>
               <Input variant="outline" placeholder="Outline" />
             </FormControl>
           </Box>
           <Box display={"flex"} justifyContent={"space-between"} gap={"16px"}>
             <FormControl>
-              <FormLabel marginBottom={"4px"}>Zip Code</FormLabel>
+              <FormLabel fontSize={"14px"} color={"rgba(102, 112, 133, 1)"} marginBottom={"4px"}>Zip Code</FormLabel>
               <Input variant="outline" placeholder="Outline" />
             </FormControl>
             <FormControl>
-              <FormLabel marginBottom={"4px"}>City</FormLabel>
+              <FormLabel fontSize={"14px"} color={"rgba(102, 112, 133, 1)"} marginBottom={"4px"}>City</FormLabel>
               <Input variant="outline" placeholder="Outline" />
             </FormControl>
             <FormControl>
-              <FormLabel marginBottom={"4px"}>Country</FormLabel>
+              <FormLabel fontSize={"14px"} color={"rgba(102, 112, 133, 1)"} marginBottom={"4px"}>Country</FormLabel>
               <Select placeholder="Select country">
                 <option>United Arab Emirates</option>
                 <option>Nigeria</option>
@@ -68,7 +68,6 @@ function BusinessInfoForm() {
           </Box>
         </Box>
       </Box>
-      <Box></Box>
     </Box>
   );
 }
