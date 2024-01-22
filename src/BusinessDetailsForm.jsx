@@ -5,7 +5,7 @@ import {
   Text,
   Input,
   FormControl,
-  FormLabel,
+  FormLabel,InputGroup,InputLeftAddon
 } from "@chakra-ui/react";
 import LogoUploader from "./DragAndDropBox";
 
@@ -49,7 +49,10 @@ function BusinessDeatailForm() {
             </FormControl>
             <FormControl>
               <FormLabel fontSize={"14px"} marginBottom={"4px"} color={"rgba(102, 112, 133, 1)"}>Company Website</FormLabel>
-              <Input variant="outline" placeholder="Outline" />
+              <InputGroup>
+                <InputLeftAddon children="https://"/>
+                <Input variant="outline" placeholder="Outline" />
+              </InputGroup>
             </FormControl>
             <FormControl>
               <FormLabel fontSize={"14px"} marginBottom={"4px"} color={"rgba(102, 112, 133, 1)"}>Industry</FormLabel>
