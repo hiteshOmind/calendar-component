@@ -1,18 +1,34 @@
 import React, { useState } from "react";
 import {
-//   InputGroup,
-//   InputLeftAddon,
-//   Select,
-//   Input,
+  InputGroup,
+  InputLeftAddon,
+  Select,
+  Input,
   Box,
   Icon,
   Text,
 } from "@chakra-ui/react";
-import "react-phone-number-input/style.css";
-import PhoneInput from "react-phone-number-input";
+
+import CountryCodes from "./rawCountries.js";
 
 function ActivateAccountForm1() {
-  const [value, setValue] = useState();
+  const [phone, setPhone] = useState("+91")
+  const [countryCode, setCountryCode] = useState("+91")
+
+  const handleDropDownChange = (e) => {
+    setCountryCode(e.target.value)
+    setPhone(e.target.value)
+  }
+
+  const handlePhoneChange = (e) => {
+    const enteredPhoneNumber = e.target.value;
+  
+    // Check if the length of the entered phone number is greater than 3
+    if (enteredPhoneNumber.length > 3) {
+      setPhone(e.target.value);
+    }
+    // If the length is less than or equal to 3, do nothing (prevent updating the state)
+  };
   return (
     <Box>
       <Box display={"flex"} gap={5}>
@@ -51,15 +67,16 @@ function ActivateAccountForm1() {
       </Box>
       <Box>
         <Box>
-            <PhoneInput
-          international
-          placeholder="Enter phone number"
-          countryCallingCodeEditable={false}
-          value={value}
-          countrySelectProps={{ unicodeFlags: false }}
-          onChange={setValue}
-          defaultCountry="IN"
-            />
+          <InputGroup>
+            <InputLeftAddon>
+              <Select onChange={handleDropDownChange} value={countryCode}>
+                {CountryCodes.map((data) => (
+                  <option value={"+" + data[3]}>{data[2].toUpperCase()}</option>
+                ))}
+              </Select>
+            </InputLeftAddon>
+            <Input onChange={handlePhoneChange} value={phone} type="tel" placeholder="Enter phone number" />
+          </InputGroup>
         </Box>
       </Box>
     </Box>
@@ -67,5 +84,3 @@ function ActivateAccountForm1() {
 }
 
 export default ActivateAccountForm1;
-
-
