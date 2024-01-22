@@ -45,18 +45,18 @@ function BusinessDeatailForm() {
           <Box width={"100%"} display={"flex"} flexDirection={"column"} gap={"16px"}>
             <FormControl>
               <FormLabel fontSize={"14px"} marginBottom={"4px"} color={"rgba(102, 112, 133, 1)"}>Company Name</FormLabel>
-              <Input variant="outline" placeholder="Outline" />
+              <Input variant="outline" placeholder="Enter compnay name" />
             </FormControl>
             <FormControl>
               <FormLabel fontSize={"14px"} marginBottom={"4px"} color={"rgba(102, 112, 133, 1)"}>Company Website</FormLabel>
               <InputGroup>
                 <InputLeftAddon children="https://"/>
-                <Input variant="outline" placeholder="Outline" />
+                <Input variant="outline" placeholder="Paste company url" />
               </InputGroup>
             </FormControl>
             <FormControl>
               <FormLabel fontSize={"14px"} marginBottom={"4px"} color={"rgba(102, 112, 133, 1)"}>Industry</FormLabel>
-              <Input variant="outline" placeholder="Outline" />
+              <Input variant="outline" placeholder="Write industry" />
             </FormControl>
           </Box>
         </Box>

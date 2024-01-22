@@ -42,21 +42,21 @@ function BusinessInfoForm() {
           <Box display={"flex"} justifyContent={"space-between"} gap={"16px"}>
             <FormControl>
               <FormLabel fontSize={"14px"} color={"rgba(102, 112, 133, 1)"} marginBottom={"4px"}>Address Line 1</FormLabel>
-              <Input variant="outline" placeholder="Outline" />
+              <Input variant="outline" placeholder="Address line 1" />
             </FormControl>
             <FormControl>
               <FormLabel fontSize={"14px"} color={"rgba(102, 112, 133, 1)"} marginBottom={"4px"}>Address Line 2</FormLabel>
-              <Input variant="outline" placeholder="Outline" />
+              <Input variant="outline" placeholder="Address line 2" />
             </FormControl>
           </Box>
           <Box display={"flex"} justifyContent={"space-between"} gap={"16px"}>
             <FormControl>
               <FormLabel fontSize={"14px"} color={"rgba(102, 112, 133, 1)"} marginBottom={"4px"}>Zip Code</FormLabel>
-              <Input variant="outline" placeholder="Outline" />
+              <Input variant="outline" placeholder="Enter zipcode" />
             </FormControl>
             <FormControl>
               <FormLabel fontSize={"14px"} color={"rgba(102, 112, 133, 1)"} marginBottom={"4px"}>City</FormLabel>
-              <Input variant="outline" placeholder="Outline" />
+              <Input variant="outline" placeholder="Enter city" />
             </FormControl>
             <FormControl>
               <FormLabel fontSize={"14px"} color={"rgba(102, 112, 133, 1)"} marginBottom={"4px"}>Country</FormLabel>
