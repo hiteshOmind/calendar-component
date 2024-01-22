@@ -6,7 +6,7 @@ import {
   Text,
   HStack,
   Button,
-  Card
+  Card,
 } from "@chakra-ui/react";
 import { ChevronRightIcon } from "@chakra-ui/icons";
 import { useState } from "react";
@@ -99,28 +99,28 @@ const CustomStepperHelper = ({ steps }) => {
         </Box>
       </HStack>
 
-      <Card style={{ width: "100%", padding: "24px", marginTop:"32px" }}>
+      <Card style={{ width: "100%", padding: "24px", marginTop: "32px" }}>
         {activeStep < steps.length ? (
           steps[activeStep].content
         ) : (
           <Box>All Done</Box>
         )}
-      </Card>
 
-      {/* Navigation Buttons */}
-      <Flex mt="4" justify="flex-end">
-        {activeStep < steps.length ? (
-          <Button
-            onClick={handleNext}
-            isDisabled={activeStep > steps.length}
-            rightIcon={<ChevronRightIcon />}
-          >
-            Save & Next
-          </Button>
-        ) : (
-          <Button rightIcon={<ChevronRightIcon />}>Submit</Button>
-        )}
-      </Flex>
+        {/* Navigation Buttons */}
+        <Flex mt="4" justify="flex-end">
+          {activeStep < steps.length ? (
+            <Button
+              onClick={handleNext}
+              isDisabled={activeStep > steps.length}
+              rightIcon={<ChevronRightIcon />}
+            >
+              Save & Next
+            </Button>
+          ) : (
+            <Button rightIcon={<ChevronRightIcon />}>Submit</Button>
+          )}
+        </Flex>
+      </Card>
     </>
   );
 };

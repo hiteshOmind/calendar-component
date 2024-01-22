@@ -7,6 +7,7 @@ import { ChakraProvider, extendTheme } from "@chakra-ui/react";
 import { StepsTheme as Steps } from "chakra-ui-steps";
 import CustomCarousel from "./Testimonial.jsx";
 import LogoUploader from "./DragAndDropBox.jsx";
+import BusinessInfoForm from "./BusinessInfoForm.jsx";
 
 const theme = extendTheme({
   components: {
@@ -82,6 +83,9 @@ function App() {
         <br />
         <br />
         <LogoUploader/>
+        <br />
+        <br />
+        <BusinessInfoForm/>
         <br />
         <br/>
         <div style={{backgroundColor:"green", paddingTop:"20px", paddingBottom:"20px"}}>
