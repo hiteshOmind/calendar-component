@@ -9,6 +9,8 @@ import CustomCarousel from "./Testimonial.jsx";
 import LogoUploader from "./DragAndDropBox.jsx";
 import BusinessInfoForm from "./BusinessInfoForm.jsx";
 import BusinessDeatailForm from "./BusinessDetailsForm.jsx";
+import ActivateAccountForm1 from "./ActivateAccount1.jsx";
+import ActivateAccountForm2 from "./ActivateAccount2.jsx";
 
 const theme = extendTheme({
   components: {
@@ -90,6 +92,12 @@ function App() {
         <br />
         <br/>
         <BusinessDeatailForm/>
+        <br />
+        <br/>
+        <ActivateAccountForm1/>
+        <br />
+        <br/>
+        <ActivateAccountForm2/>
         <br />
         <br/>
         <div style={{backgroundColor:"green", paddingTop:"20px", paddingBottom:"20px"}}>
