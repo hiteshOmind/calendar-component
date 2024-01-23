@@ -1,4 +1,4 @@
-import DatePicker, { DateRangePickerPopover } from "./DatePicker";
+import { DateRangePickerPopover } from "./DatePicker";
 import YourComponent from "./UsePagination.jsx";
 import LineStepper from "./Stepper.jsx";
 
@@ -12,6 +12,7 @@ import BusinessDeatailForm from "./BusinessDetailsForm.jsx";
 import ActivateAccountForm1 from "./ActivateAccount1.jsx";
 import ActivateAccountForm2 from "./ActivateAccount2.jsx";
 import { useState } from "react";
+import SideBannerSignUp from "./testComponent.jsx";
 
 const theme = extendTheme({
   components: {
@@ -20,7 +21,7 @@ const theme = extendTheme({
 });
 
 
-const testimonials = [
+export const testimonials = [
   {
     name: 'Ashish Rana',
     designation: 'Digital Marketing Lead',
@@ -76,6 +77,7 @@ function App() {
 
   return (
     <ChakraProvider theme={theme}>
+
       <div style={{ padding: 30 }} className="App">
         {/* <DatePicker /> */}
         <br />

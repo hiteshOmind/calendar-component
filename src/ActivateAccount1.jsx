@@ -12,20 +12,19 @@ import {
 import CountryCodes from "./rawCountries.js";
 
 function ActivateAccountForm1() {
-  const [phone, setPhone] = useState("+91");
-  const [countryCode, setCountryCode] = useState("+91");
+  const [phone, setPhone] = useState("+1");
+  const [countryData, setCountryData] = useState({name: 'United States', dial_code: '+1', code: 'US'});
 
   const handleDropDownChange = (e) => {
-    setCountryCode(e.target.value);
-    setPhone(e.target.value);
+    const data = CountryCodes.filter((countryCode) => countryCode.code === e.target.value )
+    setCountryData(data[0])
+    setPhone(data[0].dial_code);
   };
 
   const handlePhoneChange = (e) => {
-  
-      const inputDigits = e.target.value.slice(countryCode.length, e.target.value.length )
-
-      const fullNumber = countryCode + inputDigits
-
+      setPhone(e.target.value)
+      const inputDigits = e.target.value.slice(countryData.dial_code.length, e.target.value.length )
+      const fullNumber = countryData.dial_code + inputDigits
       setPhone(fullNumber);
   };
 
@@ -78,11 +77,13 @@ function ActivateAccountForm1() {
               <Select
                 borderRadius={0}
                 onChange={handleDropDownChange}
-                value={countryCode}
+                value={"ans"}
+                width="80px" 
               >
+                <option key="ans">{countryData.code}</option>
                 {CountryCodes.map((data) => (
-                  <option key={data[2]} value={"+" + data[3]}>
-                    {data[2].toUpperCase()}
+                  <option key={data.code} value={data.code}>
+                    {data.code + " " + data.name + " " + data.dial_code}
                   </option>
                 ))}
               </Select>
