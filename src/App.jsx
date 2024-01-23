@@ -1,4 +1,4 @@
-import DatePicker from "./DatePicker";
+import DatePicker, { DateRangePickerPopover } from "./DatePicker";
 import YourComponent from "./UsePagination.jsx";
 import LineStepper from "./Stepper.jsx";
 
@@ -72,10 +72,14 @@ function App() {
   return (
     <ChakraProvider theme={theme}>
       <div style={{ padding: 30 }} className="App">
-        <DatePicker />
+        {/* <DatePicker /> */}
+        <br />
+        <br />
+        <DateRangePickerPopover/>
         <br />
         <br />
         <br />
+
         <YourComponent />
         <br />
         <br />

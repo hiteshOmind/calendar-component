@@ -1,7 +1,9 @@
 .flatpickr-calendar{
       font-family: "Inter", sans-serif !important;
-      padding: 20px 20px;
+      padding: 0px 0px;
       width: fit-content;
+      border: "none !important";
+      box-shadow: none;
 }
 
 .flatpickr-prev-month{
@@ -24,16 +26,17 @@
 
 .flatpickr-month{
       padding-bottom: 15px;
+      margin-bottom: 10px;
 }
 
 .flatpickr-months .flatpickr-prev-month.flatpickr-prev-month, .flatpickr-months .flatpickr-next-month.flatpickr-prev-month {
       left: 28px;
-      top: 28px;
+      top: 9px;
   }
 
   .flatpickr-months .flatpickr-prev-month.flatpickr-next-month, .flatpickr-months .flatpickr-next-month.flatpickr-next-month {
       right: 28px;
-      top: 28px;
+      top: 9px;
   }
 
   .flatpickr-prev-month {
@@ -47,7 +50,7 @@
 
 .flatpickr-day{
       font-weight: 400;
-      font-size: 12px;
+      font-size: 14px;
     }
 
     .flatpickr-day.inRange {
@@ -62,4 +65,6 @@
       appearance: none !important;
   }
 
- 
+  .flatpickr-input[readonly]{
+    display: none;
+  }
