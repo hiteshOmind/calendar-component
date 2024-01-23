@@ -11,6 +11,7 @@ import BusinessInfoForm from "./BusinessInfoForm.jsx";
 import BusinessDeatailForm from "./BusinessDetailsForm.jsx";
 import ActivateAccountForm1 from "./ActivateAccount1.jsx";
 import ActivateAccountForm2 from "./ActivateAccount2.jsx";
+import { useState } from "react";
 
 const theme = extendTheme({
   components: {
@@ -68,14 +69,18 @@ const steps = [
   },
 ];
 
+
+
 function App() {
+  const [selectedRange, setSelectedRange] = useState([])
+
   return (
     <ChakraProvider theme={theme}>
       <div style={{ padding: 30 }} className="App">
         {/* <DatePicker /> */}
         <br />
         <br />
-        <DateRangePickerPopover/>
+        <DateRangePickerPopover selectedRange={selectedRange} setSelectedRange={setSelectedRange}/>
         <br />
         <br />
         <br />
