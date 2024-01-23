@@ -1,8 +1,7 @@
-import React, { useEffect, useRef, useState } from "react";
+import React, { useRef, useState } from "react";
 import Flatpickr from "react-flatpickr";
 import "flatpickr/dist/flatpickr.css";
 import "./DatePicker.css";
-import ShortcutButtonsPlugin from "shortcut-buttons-flatpickr";
 import {
   Box,
   Input,
@@ -16,52 +15,52 @@ import {
   Button,
 } from "@chakra-ui/react";
 
-function DatePicker() {
-  const [selectedRange, setSelectedRange] = useState([]);
+// function DatePicker() {
+//   const [selectedRange, setSelectedRange] = useState([]);
+//   const flatpickrRef = useRef(null);
+
+//   const handleDateChange = (selectedDates, dateStr, instance) => {
+//     setSelectedRange(selectedDates);
+//   };
+
+//   const options = {
+//     enableTime: false,
+//     closeOnSelect: false,
+//     mode: "range",
+//     dateFormat: "m-d-Y",
+//     Plugins: [
+//       ShortcutButtonsPlugin({
+//         button: {
+//           label: "Clear",
+//         },
+//         onClick: (index, fp) => {
+//           fp.clear();
+//           fp.close();
+//         },
+//       }),
+//     ],
+//   };
+
+//   return (
+//     <div>
+//       <Flatpickr
+//         ref={flatpickrRef}
+//         value={selectedRange}
+//         style={{ fontFamily: "Inter, sans-serif" }}
+//         onChange={handleDateChange}
+//         options={options}
+//       />
+//     </div>
+//   );
+// }
+
+// export default DatePicker;
+
+export const DateRangePickerPopover = ({selectedRange, setSelectedRange}) => {
   const flatpickrRef = useRef(null);
-
-  const handleDateChange = (selectedDates, dateStr, instance) => {
-    setSelectedRange(selectedDates);
-  };
-
-  const options = {
-    enableTime: false,
-    closeOnSelect: false,
-    mode: "range",
-    dateFormat: "m-d-Y",
-    Plugins: [
-      ShortcutButtonsPlugin({
-        button: {
-          label: "Clear",
-        },
-        onClick: (index, fp) => {
-          fp.clear();
-          fp.close();
-        },
-      }),
-    ],
-  };
-
-  return (
-    <div>
-      <Flatpickr
-        ref={flatpickrRef}
-        value={selectedRange}
-        style={{ fontFamily: "Inter, sans-serif" }}
-        onChange={handleDateChange}
-        options={options}
-      />
-    </div>
-  );
-}
-
-export default DatePicker;
-
-export const DateRangePickerPopover = () => {
-  const flatpickrRef = useRef(null);
-  const [selectedRange, setSelectedRange] = useState([]);
+  // const [selectedRange, setSelectedRange] = useState([]);
   const [isOpen, setIsOpen] = useState(false);
-  const [inputValue, setInputValue] = useState("")
+  const [inputValue, setInputValue] = useState("");
 
   const handleDateChange = (selectedDates) => {
     setSelectedRange(selectedDates);
@@ -70,9 +69,14 @@ export const DateRangePickerPopover = () => {
 
   const dateConvertHelper = (selectedDates) => {
     const dateOptions = { month: "short", day: "numeric", year: "numeric" };
-    const formattedStartDate = selectedDates[0]?.toLocaleDateString("en-US", dateOptions);
-    const formattedEndDate = selectedDates[1] ? selectedDates[1].toLocaleDateString("en-US", dateOptions) : "";
-    setInputValue(`${formattedStartDate} - ${formattedEndDate}`)
+    const formattedStartDate = selectedDates[0]?.toLocaleDateString(
+      "en-US",
+      dateOptions
+    );
+    const formattedEndDate = selectedDates[1]
+      ? selectedDates[1].toLocaleDateString("en-US", dateOptions)
+      : "";
+    setInputValue(`${formattedStartDate} - ${formattedEndDate}`);
   };
 
   const handleApply = () => {
@@ -83,19 +87,13 @@ export const DateRangePickerPopover = () => {
     setIsOpen(false);
   };
 
-  const options = {
-    enableTime: false,
-    closeOnSelect: false,
-    mode: "range",
-    inline: true,
-    dateFormat: "m-d-Y",
-  };
+  console.log(isOpen);
 
   return (
     <Popover placement="auto-start" isOpen={isOpen}>
       <PopoverTrigger>
-        <InputGroup  onClick={() => setIsOpen(true)}>
-          <InputLeftAddon>
+        <InputGroup onClick={() => setIsOpen(!isOpen)}>
+          <InputLeftAddon backgroundColor={"#fff"}>
             <svg
               xmlns="http://www.w3.org/2000/svg"
               width="20"
@@ -112,38 +110,44 @@ export const DateRangePickerPopover = () => {
               />
             </svg>
           </InputLeftAddon>
-          <Input
-            value={inputValue}
-            width={"240px"}
-            readOnly
-          />
+          <Input value={inputValue} width={"240px"} readOnly />
         </InputGroup>
       </PopoverTrigger>
-      <PopoverContent width={"332px"}>
-        <PopoverBody>
-          <Box>
-            <Flatpickr
-              ref={flatpickrRef}
-              value={selectedRange}
-              onChange={handleDateChange}
-              options={options}
-            />
-          </Box>
-        </PopoverBody>
-        <PopoverFooter
-          display={"flex"}
-          gap={"12px"}
-          padding={"16px 24px"}
-          justifyContent={"space-between"}
-        >
-          <Button width={"100%"} onClick={handleCancel}>
-            Cancel
-          </Button>
-          <Button width={"100%"} colorScheme="blue" onClick={handleApply}>
-            Apply
-          </Button>
-        </PopoverFooter>
-      </PopoverContent>
+      {isOpen ? (
+        <PopoverContent width={"332px"}>
+          <PopoverBody>
+            <Box>
+              <Flatpickr
+                ref={flatpickrRef}
+                value={selectedRange}
+                onChange={handleDateChange}
+                options={{
+                  enableTime: false,
+                  closeOnSelect: false,
+                  mode: "range",
+                  inline: isOpen,
+                  dateFormat: "m-d-Y",
+                }}
+              />
+            </Box>
+          </PopoverBody>
+          <PopoverFooter
+            display={"flex"}
+            gap={"12px"}
+            padding={"16px 24px"}
+            justifyContent={"space-between"}
+          >
+            <Button width={"100%"} onClick={handleCancel}>
+              Cancel
+            </Button>
+            <Button width={"100%"} colorScheme="blue" onClick={handleApply}>
+              Apply
+            </Button>
+          </PopoverFooter>
+        </PopoverContent>
+      ) : (
+        ""
+      )}
     </Popover>
   );
 };
