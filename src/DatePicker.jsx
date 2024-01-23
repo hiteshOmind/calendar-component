@@ -15,47 +15,6 @@ import {
   Button,
 } from "@chakra-ui/react";
 
-// function DatePicker() {
-//   const [selectedRange, setSelectedRange] = useState([]);
-//   const flatpickrRef = useRef(null);
-
-//   const handleDateChange = (selectedDates, dateStr, instance) => {
-//     setSelectedRange(selectedDates);
-//   };
-
-//   const options = {
-//     enableTime: false,
-//     closeOnSelect: false,
-//     mode: "range",
-//     dateFormat: "m-d-Y",
-//     Plugins: [
-//       ShortcutButtonsPlugin({
-//         button: {
-//           label: "Clear",
-//         },
-//         onClick: (index, fp) => {
-//           fp.clear();
-//           fp.close();
-//         },
-//       }),
-//     ],
-//   };
-
-//   return (
-//     <div>
-//       <Flatpickr
-//         ref={flatpickrRef}
-//         value={selectedRange}
-//         style={{ fontFamily: "Inter, sans-serif" }}
-//         onChange={handleDateChange}
-//         options={options}
-//       />
-//     </div>
-//   );
-// }
-
-// export default DatePicker;
-
 export const DateRangePickerPopover = ({selectedRange, setSelectedRange}) => {
   const flatpickrRef = useRef(null);
   // const [selectedRange, setSelectedRange] = useState([]);
