@@ -51,7 +51,7 @@ export const DateRangePickerPopover = ({selectedRange, setSelectedRange}) => {
   return (
     <Popover placement="auto-start" isOpen={isOpen}>
       <PopoverTrigger>
-        <InputGroup onClick={() => setIsOpen(!isOpen)}>
+        <InputGroup width={"fit-content"} onClick={() => setIsOpen(!isOpen)}>
           <InputLeftAddon backgroundColor={"#fff"}>
             <svg
               xmlns="http://www.w3.org/2000/svg"
