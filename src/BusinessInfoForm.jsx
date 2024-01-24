@@ -8,6 +8,16 @@ import {
   FormLabel,
   Select,
 } from "@chakra-ui/react";
+import { Select as SearchSelect } from "chakra-react-select";
+
+export const Options = [
+  { value: "blue", label: "Blue" },
+  { value: "purple", label: "Purple" },
+  { value: "red", label: "Red" },
+  { value: "orange", label: "Orange" },
+  { value: "yellow", label: "Yellow" },
+  { value: "green", label: "Green" },
+];
 
 function BusinessInfoForm() {
   return (
@@ -41,29 +51,62 @@ function BusinessInfoForm() {
         <Box mt={"40px"} display={"flex"} flexDir={"column"} gap={"16px"}>
           <Box display={"flex"} justifyContent={"space-between"} gap={"16px"}>
             <FormControl>
-              <FormLabel fontSize={"14px"} color={"rgba(102, 112, 133, 1)"} marginBottom={"4px"}>Address Line 1</FormLabel>
+              <FormLabel
+                fontSize={"14px"}
+                color={"rgba(102, 112, 133, 1)"}
+                marginBottom={"4px"}
+              >
+                Address Line 1
+              </FormLabel>
               <Input variant="outline" placeholder="Address line 1" />
             </FormControl>
             <FormControl>
-              <FormLabel fontSize={"14px"} color={"rgba(102, 112, 133, 1)"} marginBottom={"4px"}>Address Line 2</FormLabel>
+              <FormLabel
+                fontSize={"14px"}
+                color={"rgba(102, 112, 133, 1)"}
+                marginBottom={"4px"}
+              >
+                Address Line 2
+              </FormLabel>
               <Input variant="outline" placeholder="Address line 2" />
             </FormControl>
           </Box>
           <Box display={"flex"} justifyContent={"space-between"} gap={"16px"}>
             <FormControl>
-              <FormLabel fontSize={"14px"} color={"rgba(102, 112, 133, 1)"} marginBottom={"4px"}>Zip Code</FormLabel>
+              <FormLabel
+                fontSize={"14px"}
+                color={"rgba(102, 112, 133, 1)"}
+                marginBottom={"4px"}
+              >
+                Zip Code
+              </FormLabel>
               <Input variant="outline" placeholder="Enter zipcode" />
             </FormControl>
             <FormControl>
-              <FormLabel fontSize={"14px"} color={"rgba(102, 112, 133, 1)"} marginBottom={"4px"}>City</FormLabel>
+              <FormLabel
+                fontSize={"14px"}
+                color={"rgba(102, 112, 133, 1)"}
+                marginBottom={"4px"}
+              >
+                City
+              </FormLabel>
               <Input variant="outline" placeholder="Enter city" />
             </FormControl>
             <FormControl>
-              <FormLabel fontSize={"14px"} color={"rgba(102, 112, 133, 1)"} marginBottom={"4px"}>Country</FormLabel>
-              <Select placeholder="Select country">
-                <option>United Arab Emirates</option>
-                <option>Nigeria</option>
-              </Select>
+              <FormLabel
+                fontSize={"14px"}
+                color={"rgba(102, 112, 133, 1)"}
+                marginBottom={"4px"}
+              >
+                Country
+              </FormLabel>
+              <SearchSelect
+                name="country selector"
+                options={Options}
+                placeholder="Country"
+                variant="outline"
+                useBasicStyles 
+              />
             </FormControl>
           </Box>
         </Box>

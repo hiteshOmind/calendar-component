@@ -16,7 +16,7 @@ function ActivateAccountForm1() {
   const [countryData, setCountryData] = useState({name: 'United States', dial_code: '+1', code: 'US'});
 
   const handleDropDownChange = (e) => {
-    const data = CountryCodes.filter((countryCode) => countryCode.code === e.target.value )
+    const data = CountryCodes.filter((countryCode) => countryCode.code === e.target.value)
     setCountryData(data[0])
     setPhone(data[0].dial_code);
   };
