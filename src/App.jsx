@@ -15,6 +15,7 @@ import { useState } from "react";
 import SideBannerSignUp from "./testComponent.jsx";
 import ChatAPIG from "./palm2/ChatAPIG.jsx";
 import TableComponent from "./TableComponent.jsx";
+import { TableWithPagination } from "./CheckBoxTableComponent.jsx";
 
 const theme = extendTheme({
   components: {
@@ -118,6 +119,9 @@ function App() {
       </div> */}
       {/* <ChatAPIG/> */}
       <div style={{padding:30}}>
+        <TableWithPagination/>
+        <br />
+        <br />
       <TableComponent/>
       </div>
     </ChakraProvider>

@@ -2,11 +2,11 @@ import React, { useState } from "react";
 import {
   InputGroup,
   InputLeftAddon,
-  Select,
   Input,
   Box,
   Icon,
   Text,
+  Select
 } from "@chakra-ui/react";
 
 import CountryCodes from "./rawCountries.js";
