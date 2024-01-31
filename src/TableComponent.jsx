@@ -180,8 +180,8 @@ export const TableWithPagination = ({ checkBoxTable = false }) => {
         </Thead>
         <Tbody color={"#667085"}>
           {currentItems.map((item, index) => (
-            <Tr paddingLeft={"16px"} key={index}>
-              <Td>
+            <Tr key={index}>
+              <Td paddingLeft={"16px"}>
                 <Box
                   style={{
                     display: "flex",
@@ -210,7 +210,7 @@ export const TableWithPagination = ({ checkBoxTable = false }) => {
               </Td>
               <Td>
                 <Text fontSize={14} textTransform={"none"} fontWeight={400}>
-                  {new Date(item.addedOn).toLocaleDateString()}
+                  {formatDate(item.addedOn)}
                 </Text>
               </Td>
               <Td>
@@ -218,19 +218,35 @@ export const TableWithPagination = ({ checkBoxTable = false }) => {
                   {item.lastKnownSource}
                 </Text>
               </Td>
-              <Td
-                
-              >
-                <Text style={{
-                  whiteSpace: "nowrap",
-                  overflow: "hidden",
-                  textOverflow: "ellipsis",
-                  width: "170px",
-                }} fontSize={14} textTransform={"none"} fontWeight={400}>
+              <Td>
+                <Box style={{display:"flex", alignItems:"center", gap:"8px"}}>
+
+                <Icon mt={1} width={"20px"} height={"20px"} fill={"none"}>
+                    <path
+                      d="M18.3337 4.99967C18.3337 4.08301 17.5837 3.33301 16.667 3.33301H3.33366C2.41699 3.33301 1.66699 4.08301 1.66699 4.99967M18.3337 4.99967V14.9997C18.3337 15.9163 17.5837 16.6663 16.667 16.6663H3.33366C2.41699 16.6663 1.66699 15.9163 1.66699 14.9997V4.99967M18.3337 4.99967L10.0003 10.833L1.66699 4.99967"
+                      stroke="#667085"
+                      stroke-width="1.5"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                </Icon>
+                <Text
+                  style={{
+                    whiteSpace: "nowrap",
+                    overflow: "hidden",
+                    textOverflow: "ellipsis",
+                    width: "170px",
+                  }}
+                  fontSize={14}
+                  textTransform={"none"}
+                  fontWeight={400}
+                >
                   {item.recentCampaign}
                 </Text>
+
+                </Box>
               </Td>
-              <Td>
+              <Td paddingRight={"16px"}>
                 <Text
                   fontSize={14}
                   color={"#126E36"}
@@ -259,3 +275,31 @@ export const TableWithPagination = ({ checkBoxTable = false }) => {
     </Box>
   );
 };
+
+function formatDate(inputDate) {
+  const months = [
+    "Jan",
+    "Feb",
+    "Mar",
+    "Apr",
+    "May",
+    "Jun",
+    "Jul",
+    "Aug",
+    "Sep",
+    "Oct",
+    "Nov",
+    "Dec",
+  ];
+
+  const date = new Date(inputDate);
+  // Get the day, month, and year
+  const day = date.getDate();
+  const monthIndex = date.getMonth(); // Note: Month starts from 0
+  const year = date.getFullYear();
+
+  // Format the date
+  const formattedDate = `${day} ${months[monthIndex]} ${year}`;
+
+  return formattedDate;
+}
