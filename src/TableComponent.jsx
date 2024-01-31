@@ -248,7 +248,6 @@ export const TableWithPagination = ({ checkBoxTable = false }) => {
         flex
         justifyContent={"center"}
         alignItems={"center"}
-        border={"1px solid rgba(234, 236, 240, 1)"}
         padding={"12px 16px 16px 16px"}
       >
         <Pagination
