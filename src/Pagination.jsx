@@ -18,7 +18,6 @@ const Pagination = ({ currentPage, totalPages, onPageChange }) => {
 
   return (
     <Box
-      mt={4}
       display="flex"
       justifyContent="space-between"
       alignItems="center"

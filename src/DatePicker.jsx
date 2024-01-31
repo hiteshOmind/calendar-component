@@ -15,6 +15,7 @@ import {
   Button,
 } from "@chakra-ui/react";
 
+
 export const DateRangePickerPopover = ({selectedRange, setSelectedRange}) => {
   const flatpickrRef = useRef(null);
   // const [selectedRange, setSelectedRange] = useState([]);
