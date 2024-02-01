@@ -7,7 +7,7 @@ function SegmentAssociationCard({
   staticCount,
 }) {
   return (
-    <Card>
+    <Card boxShadow={"none"} border={"1px solid rgba(234, 236, 240, 1)"}>
       <Box
         display={"flex"}
         gap={"12px"}

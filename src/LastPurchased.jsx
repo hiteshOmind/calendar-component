@@ -3,7 +3,7 @@ import React from 'react'
 
 function LastPurchasedCard({productName, orderDate , imgUrl = ""}) {
   return (
-    <Card>
+    <Card boxShadow={"none"} border={"1px solid rgba(234, 236, 240, 1)"}>
         <Box display={"flex"} gap={"12px"} padding={"12px 16px 12px 16px"}>
             <Box>
                 <Avatar height={"40px"} borderRadius={"4px"} width={"40px"} src={imgUrl}>
