@@ -17,6 +17,9 @@ import ChatAPIG from "./palm2/ChatAPIG.jsx";
 import TableComponent from "./TableComponent.jsx";
 import { TableWithPagination } from "./CheckBoxTableComponent.jsx";
 import TimelineComponent from "./TimelineComponent.jsx";
+import LastPurchasedCard from "./LastPurchased.jsx";
+import UserRelationsCard from "./UserRelationsCard.jsx";
+import SegmentAssociationCard from "./SegmentAssociationCard.jsx";
 
 const theme = extendTheme({
   components: {
@@ -176,6 +179,24 @@ function App() {
         <br />
         <br />
         <TimelineComponent TimeLineData={timeLineData} />
+        <br />
+        <br />
+        <LastPurchasedCard
+          productName={"Hitesh Kumar"}
+          orderDate={"12 Jan 2023"}
+        />
+        <br />
+        <br />
+        <br />
+        <UserRelationsCard
+          revenue={"$1235"}
+          firstOrderDate={"12 Dec 2023"}
+          LastOrderDate={"12 Jan 2023"}
+          lastSeen={"12 Dec 2023"}
+        />
+        <br /><br />
+        <br />
+        <SegmentAssociationCard rfmCount={1288} customCount={32323} staticCount={54654}/>
       </div>
     </ChakraProvider>
   );
