@@ -20,6 +20,7 @@ import TimelineComponent from "./TimelineComponent.jsx";
 import LastPurchasedCard from "./LastPurchased.jsx";
 import UserRelationsCard from "./UserRelationsCard.jsx";
 import SegmentAssociationCard from "./SegmentAssociationCard.jsx";
+import LeftFixedUserProfile from "./LeftFixedUserProfile.jsx";
 
 const theme = extendTheme({
   components: {
@@ -197,6 +198,10 @@ function App() {
         <br /><br />
         <br />
         <SegmentAssociationCard rfmCount={1288} customCount={32323} staticCount={54654}/>
+        <br />
+        <br />
+        <br />
+        <LeftFixedUserProfile/>
       </div>
     </ChakraProvider>
   );

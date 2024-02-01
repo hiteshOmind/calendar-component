@@ -50,11 +50,10 @@ const MilestoneItem = ({
       <Flex flexDir="column" alignItems="center" mr={4} pos="relative">
         <Circle
           size={"40px"}
-          bg={useColorModeValue("gray.600", "gray.500")}
-          opacity={useColorModeValue(0.07, 0.15)}
+          bg={isCardOpen ? "rgba(7, 43, 21, 1)" : "rgba(234, 236, 240, 1)"}
         />
-        <Box as={icon} size="16px" color={color} pos="absolute" top={"12px"} />
-        {!skipTrail && <Box w="1px" flex={1} bg={color} my={1} />}
+        <Box as={icon} size="16px" color={isCardOpen ? "#fff" : color} pos="absolute" top={"12px"} />
+        {!skipTrail && <Box w="2px" flex={1} bg={"rgba(234, 236, 240, 1)"} />}
       </Flex>
       <Box width={"100%"} {...boxProps}>
         <Box
@@ -108,25 +107,49 @@ const MilestoneItem = ({
           </Box>
         </Box>
         {isCardOpen ? (
-          <Card padding={"16px 16px 0px 16px"} mt={"16px"} mb={"24px"} borderRadius={"8px"}>
+          <Card
+            padding={"16px 16px 0px 16px"}
+            mt={"16px"}
+            mb={"24px"}
+            borderRadius={"8px"}
+          >
             <Box>
-              <Text fontSize={16} mb={"8px"} fontWeight={500} color={"rgba(52, 64, 84, 1)"}>
+              <Text
+                fontSize={16}
+                mb={"8px"}
+                fontWeight={500}
+                color={"rgba(52, 64, 84, 1)"}
+              >
                 Event Attributes
               </Text>
-              {item?.attributeData?.map((attData, index) =><Box 
+              {item?.attributeData?.map((attData, index) => (
+                <Box
                   display={"flex"}
                   width={"100%"}
                   justifyContent={"space-between"}
                   padding={"16px 0px"}
-                  borderBottom={index !== item?.attributeData.length - 1 ? "1px solid rgba(234, 236, 240, 1)":""}
+                  borderBottom={
+                    index !== item?.attributeData.length - 1
+                      ? "1px solid rgba(234, 236, 240, 1)"
+                      : ""
+                  }
                 >
-                  <Text fontSize={13} fontWeight={500} color={"rgba(102, 112, 133, 1)"}>
+                  <Text
+                    fontSize={13}
+                    fontWeight={500}
+                    color={"rgba(102, 112, 133, 1)"}
+                  >
                     {attData.attribute}
                   </Text>
-                  <Text fontSize={14} fontWeight={500} color={"rgba(16, 24, 40, 1)"}>
+                  <Text
+                    fontSize={14}
+                    fontWeight={500}
+                    color={"rgba(16, 24, 40, 1)"}
+                  >
                     {attData.attributeDetail}
                   </Text>
-                </Box> )}
+                </Box>
+              ))}
             </Box>
           </Card>
         ) : (
