@@ -16,6 +16,7 @@ import SideBannerSignUp from "./testComponent.jsx";
 import ChatAPIG from "./palm2/ChatAPIG.jsx";
 import TableComponent from "./TableComponent.jsx";
 import { TableWithPagination } from "./CheckBoxTableComponent.jsx";
+import TimelineComponent from "./TimelineComponent.jsx";
 
 const theme = extendTheme({
   components: {
@@ -23,31 +24,35 @@ const theme = extendTheme({
   },
 });
 
-
 export const testimonials = [
   {
-    name: 'Ashish Rana',
-    designation: 'Digital Marketing Lead',
-    image: 'https://assets-global.website-files.com/657ae52dd10b96aa23c62725/6592aa5ac15a404586f9a71c_Ashish%20Rana.webp',
+    name: "Ashish Rana",
+    designation: "Digital Marketing Lead",
+    image:
+      "https://assets-global.website-files.com/657ae52dd10b96aa23c62725/6592aa5ac15a404586f9a71c_Ashish%20Rana.webp",
     rating: 5,
-    description: "“A great platform that helped us get qualified leads & reduce no response rate. I've already recommended others to use the same.”"
+    description:
+      "“A great platform that helped us get qualified leads & reduce no response rate. I've already recommended others to use the same.”",
   },
   {
-    name: 'Michael Benedict',
-    designation: 'Corporate Compliance Officer',
-    image: 'https://assets-global.website-files.com/657ae52dd10b96aa23c62725/6592aa88b67afefeeccebb0a_benedict.webp',
+    name: "Michael Benedict",
+    designation: "Corporate Compliance Officer",
+    image:
+      "https://assets-global.website-files.com/657ae52dd10b96aa23c62725/6592aa88b67afefeeccebb0a_benedict.webp",
     rating: 5,
-    description: "“Everything you need to manage your team and learn more about the organization in one amazing tool! I liked the old design but I definitely love the new one! Very friendly and easy to navigate user interface. Definitely a holistic approach.”"
+    description:
+      "“Everything you need to manage your team and learn more about the organization in one amazing tool! I liked the old design but I definitely love the new one! Very friendly and easy to navigate user interface. Definitely a holistic approach.”",
   },
   {
-    name: 'Varsha Patil',
-    designation: 'Head Customer Technology',
-    image: "https://assets-global.website-files.com/657ae52dd10b96aa23c62725/6592ab4ac996e820956d712c_Screenshot%202024-01-01%20at%2012.49.15%E2%80%AFAM-p-500.webp",
+    name: "Varsha Patil",
+    designation: "Head Customer Technology",
+    image:
+      "https://assets-global.website-files.com/657ae52dd10b96aa23c62725/6592ab4ac996e820956d712c_Screenshot%202024-01-01%20at%2012.49.15%E2%80%AFAM-p-500.webp",
     rating: 5,
-    description: "“With WhatsApp marketing tool we could achieve real time interaction with our valued customer. The team has demonstrated a highly adaptive and engaging approach from the beginning.”"
-  }
+    description:
+      "“With WhatsApp marketing tool we could achieve real time interaction with our valued customer. The team has demonstrated a highly adaptive and engaging approach from the beginning.”",
+  },
 ];
-
 
 const Content1 = () => <h1>Hello, I am content 1</h1>;
 
@@ -73,10 +78,55 @@ const steps = [
   },
 ];
 
-
+const timeLineData = [
+  {
+    eventName: "Event Name",
+    source: "source",
+    time: "11:12 AM - 17 May 2023 ",
+    component: <h1>Hello I am nice Component :)</h1>,
+    attributeData: [
+      { attribute: "Name", attributeDetail: "Hitesh Kumar" },
+      { attribute: "Name", attributeDetail: "Hitesh Kumar" },
+      { attribute: "Name", attributeDetail: "Hitesh Kumar" },
+    ],
+  },
+  {
+    eventName: "Event Name",
+    source: "source",
+    time: "11:12 AM - 17 May 2023 ",
+    component: <h1>Hello I am nice Component :)</h1>,
+    attributeData: [
+      { attribute: "Name", attributeDetail: "Hitesh Kumar" },
+      { attribute: "Name", attributeDetail: "Hitesh Kumar" },
+      { attribute: "Name", attributeDetail: "Hitesh Kumar" },
+    ],
+  },
+  {
+    eventName: "Event Name",
+    source: "source",
+    time: "11:12 AM - 17 May 2023 ",
+    component: <h1>Hello I am nice Component :)</h1>,
+    attributeData: [
+      { attribute: "Name", attributeDetail: "Hitesh Kumar" },
+      { attribute: "Name", attributeDetail: "Hitesh Kumar" },
+      { attribute: "Name", attributeDetail: "Hitesh Kumar" },
+    ],
+  },
+  {
+    eventName: "Event Name",
+    source: "source",
+    time: "11:12 AM - 17 May 2023 ",
+    component: <h1>Hello I am nice Component :)</h1>,
+    attributeData: [
+      { attribute: "Name", attributeDetail: "Hitesh Kumar" },
+      { attribute: "Name", attributeDetail: "Hitesh Kumar" },
+      { attribute: "Name", attributeDetail: "Hitesh Kumar" },
+    ],
+  },
+];
 
 function App() {
-  const [selectedRange, setSelectedRange] = useState([])
+  const [selectedRange, setSelectedRange] = useState([]);
 
   return (
     <ChakraProvider theme={theme}>
@@ -118,11 +168,14 @@ function App() {
         </div>
       </div> */}
       {/* <ChatAPIG/> */}
-      <div style={{padding:30}}>
-        <TableWithPagination/>
+      <div style={{ padding: 30 }}>
+        <TableWithPagination />
         <br />
         <br />
-      <TableComponent/>
+        <TableComponent />
+        <br />
+        <br />
+        <TimelineComponent TimeLineData={timeLineData} />
       </div>
     </ChakraProvider>
   );
