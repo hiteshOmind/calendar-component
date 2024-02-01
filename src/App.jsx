@@ -21,6 +21,7 @@ import LastPurchasedCard from "./LastPurchased.jsx";
 import UserRelationsCard from "./UserRelationsCard.jsx";
 import SegmentAssociationCard from "./SegmentAssociationCard.jsx";
 import LeftFixedUserProfile from "./LeftFixedUserProfile.jsx";
+import DatePicker from "react-flatpickr";
 
 const theme = extendTheme({
   components: {
@@ -132,13 +133,22 @@ const timeLineData = [
 function App() {
   const [selectedRange, setSelectedRange] = useState([]);
 
+  const [editEmail, setEditEmail] = useState("hdshjjdsd@gggs.com")
+  const [editLanguage, setEditLanguage] = useState("Hindi")
+  const [editMobile, setEditMobile] = useState("98y873473")
+
+  console.log(editEmail, editLanguage, editMobile);
+
   return (
     <ChakraProvider theme={theme}>
       {/* <div style={{ padding: 30 }} className="App">
         <DatePicker />
         <br />
         <br />
-        <DateRangePickerPopover selectedRange={selectedRange} setSelectedRange={setSelectedRange}/>
+        <DateRangePickerPopover
+          selectedRange={selectedRange}
+          setSelectedRange={setSelectedRange}
+        />
         <br />
         <br />
         <br />
@@ -152,28 +162,34 @@ function App() {
         </div>
         <br />
         <br />
-        <LogoUploader/>
+        <LogoUploader />
         <br />
         <br />
-        <BusinessInfoForm/>
+        <BusinessInfoForm />
         <br />
-        <br/>
-        <BusinessDeatailForm/>
         <br />
-        <br/>
-        <ActivateAccountForm1/>
+        <BusinessDeatailForm />
         <br />
-        <br/>
-        <ActivateAccountForm2/>
         <br />
-        <br/>
-        <div style={{backgroundColor:"green", paddingTop:"20px", paddingBottom:"20px"}}>
-          <CustomCarousel ratingData={testimonials}/>
+        <ActivateAccountForm1 />
+        <br />
+        <br />
+        <ActivateAccountForm2 />
+        <br />
+        <br />
+        <div
+          style={{
+            backgroundColor: "green",
+            paddingTop: "20px",
+            paddingBottom: "20px",
+          }}
+        >
+          <CustomCarousel ratingData={testimonials} />
         </div>
       </div> */}
       {/* <ChatAPIG/> */}
       <div style={{ padding: 30 }}>
-        <TableWithPagination />
+        {/* <TableWithPagination />
         <br />
         <br />
         <TableComponent />
@@ -195,13 +211,32 @@ function App() {
           LastOrderDate={"12 Jan 2023"}
           lastSeen={"12 Dec 2023"}
         />
-        <br /><br />
-        <br />
-        <SegmentAssociationCard rfmCount={1288} customCount={32323} staticCount={54654}/>
         <br />
         <br />
         <br />
-        <LeftFixedUserProfile/>
+        <SegmentAssociationCard
+          rfmCount={1288}
+          customCount={32323}
+          staticCount={54654}
+        /> */}
+        <br />
+        <br />
+        <br />
+        <LeftFixedUserProfile
+          name="Hitesh Kumar"
+          mobileNumber="83076t7632"
+          email="hitesh@omind.ai"
+          timeZone="UTC +5:30"
+          addedOn="12 Dec 2023"
+          language="English"
+          editEmail={editEmail}
+          setEditEmail={setEditEmail}
+          editMobile={editMobile}
+          setEditMobile={setEditMobile}
+          editLanguage={editLanguage}
+          setEditLanguage={setEditLanguage}
+          editing={true}
+        />
       </div>
     </ChakraProvider>
   );
