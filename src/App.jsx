@@ -1,4 +1,4 @@
-import { DateRangePickerPopover } from "./DatePicker";
+import { DateRangePickerPopover } from "./DatePicker/DatePicker.jsx";
 import YourComponent from "./UsePagination.jsx";
 import LineStepper from "./Stepper.jsx";
 
@@ -139,13 +139,16 @@ function App() {
 
   console.log(editEmail, editLanguage, editMobile);
 
+  console.log(selectedRange);
+
   return (
     <ChakraProvider theme={theme}>
-      {/* <div style={{ padding: 30 }} className="App">
+      <div style={{ padding: 30 }} className="App">
         <DatePicker />
         <br />
         <br />
         <DateRangePickerPopover
+          left={true}
           selectedRange={selectedRange}
           setSelectedRange={setSelectedRange}
         />
@@ -186,7 +189,7 @@ function App() {
         >
           <CustomCarousel ratingData={testimonials} />
         </div>
-      </div> */}
+      </div>
       {/* <ChatAPIG/> */}
       <div style={{ padding: 30 }}>
         {/* <TableWithPagination />

@@ -387,7 +387,7 @@ function LeftFixedUserProfile({
                 </Text>
               ) : data?.item !== "Language" ? (
                 <Input
-                  variant="outline"
+                    _focus={{border:"1px solid rgba(7, 43, 21, 1)", boxShadow:"none"}}
                   placeholder={
                     data?.item === "Mobile Number"
                       ? "Enter Here"
@@ -408,6 +408,7 @@ function LeftFixedUserProfile({
               ) : (
                 <>
                   <Select
+                    focusBorderColor="rgba(7, 43, 21, 1)"
                     defaultValue={LanguageOptions[languageIndex]}
                     onChange={(e) =>handleSelectChange(e)}
                     useBasicStyles
