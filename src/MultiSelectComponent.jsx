@@ -58,6 +58,8 @@ function MultiSelectComponent(props) {
           padding: "2px 8px",
           backgroundColor: "rgba(216, 255, 234, 1)",
           borderRadius: "14px",
+          fontSize:"12px",
+          fontWeight:"500"
         }}
       >
         {label}
