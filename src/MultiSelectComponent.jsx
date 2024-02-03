@@ -1,10 +1,9 @@
 import { Box, LinkBox, Text } from "@chakra-ui/react";
 import { Select as RSelect } from "chakra-react-select";
 import React from "react";
-import { Select } from "@chakra-ui/react";
 
 function MultiSelectComponent(props) {
-  console.log(props);
+//   console.log(props);
   //       ? PROPS -->
   //       colorScheme="green"
   //       isClearable={false}
@@ -19,7 +18,7 @@ function MultiSelectComponent(props) {
     if (e.length <= props.selectLength) {
       props.setMultiInputValues(e);
     }else{
-        console.log("do nothing");
+        // console.log("do nothing");
     }
   };
 
@@ -79,13 +78,6 @@ function MultiSelectComponent(props) {
         value={props.multiInputValues || ""}
         {...props}
       />
-      {/* <Select style={{margin:"2px 6px 2px 8px"}} placeholder="Select option">
-        <option value="option1">
-            <Box style={{color:"red", backgroundColor:"green"}}><Text margin="2px 6px 2px 8px">Hello</Text></Box>
-        </option>
-        <option value="option2">Option 2</option>
-        <option value="option3">Option 3</option>
-      </Select> */}
     </Box>
   );
 }
