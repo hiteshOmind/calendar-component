@@ -22,6 +22,8 @@ import UserRelationsCard from "./UserRelationsCard.jsx";
 import SegmentAssociationCard from "./SegmentAssociationCard.jsx";
 import LeftFixedUserProfile from "./LeftFixedUserProfile.jsx";
 import DatePicker from "react-flatpickr";
+import MultiSelectComponent from "./MultiSelectComponent.jsx";
+import SelectCustom from "./CustomSelect.jsx";
 
 const theme = extendTheme({
   components: {
@@ -133,13 +135,32 @@ const timeLineData = [
 function App() {
   const [selectedRange, setSelectedRange] = useState([]);
 
-  const [editEmail, setEditEmail] = useState("hdshjjdsd@gggs.com")
-  const [editLanguage, setEditLanguage] = useState("Hindi")
-  const [editMobile, setEditMobile] = useState("98y873473")
+  const [editEmail, setEditEmail] = useState("hdshjjdsd@gggs.com");
+  const [editLanguage, setEditLanguage] = useState("Hindi");
+  const [editMobile, setEditMobile] = useState("98y873473");
+
+  const Coloroptions = [
+    {
+      label: "hello",
+      value: "hello",
+      className: "custom-option",
+      id:"text"
+    },
+    {
+      label: "groot",
+      value: "groot",
+      className: "custom-option",
+      id:"text"
+    },
+  ];
 
   console.log(editEmail, editLanguage, editMobile);
 
   console.log(selectedRange);
+
+  const [multiInputValues, setMultiInputValues] = useState([]);
+
+  console.log(multiInputValues);
 
   return (
     <ChakraProvider theme={theme}>
@@ -222,6 +243,19 @@ function App() {
           customCount={32323}
           staticCount={54654}
         /> */}
+        <MultiSelectComponent
+          colorScheme="green"
+          isClearable={false}
+          useBasicStyles
+          setMultiInputValues={setMultiInputValues}
+          isMulti
+          selectLength={1}
+          multiInputValues={multiInputValues}
+          options={Coloroptions}
+          placeholder="Select"
+        />
+
+        {/* <SelectCustom/> */}
         <br />
         <br />
         <br />

@@ -57,7 +57,7 @@ export const DateRangePickerPopover = ({
   };
 
   return (
-    <Popover placement="auto-start" isOpen={isOpen}>
+    <Popover isOpen={isOpen}>
       <PopoverTrigger>
         <InputGroup borderRadius={"0.375rem"} border={"1px solid #e2e8f0"} width={"fit-content"} onClick={() => setIsOpen(!isOpen)}>
           {left ? (
@@ -81,7 +81,7 @@ export const DateRangePickerPopover = ({
           ) : (
             ""
           )}
-          <Input border={"none"} borderLeft={left ? "none" : "default"} borderRight={!left ? "none" : "default"} value={inputValue} width={"240px"} readOnly />
+          <Input border={"none"} borderLeft={left ? "none" : "default"} borderRight={!left ? "none" : "default"} value={inputValue} readOnly />
           {!left ? (
             <InputRightAddon border={"none"} backgroundColor={"#fff"}>
               <svg

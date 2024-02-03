@@ -16,6 +16,8 @@
     "axios": "^1.6.6",
     "chakra-react-select": "^4.7.6",
     "chakra-ui-steps": "^2.1.0",
+    "chroma": "^0.0.1",
+    "chroma-js": "^2.4.2",
     "csv-parser": "^3.0.0",
     "flatpickr": "^4.6.13",
     "formik": "^2.4.5",
