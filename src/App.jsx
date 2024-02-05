@@ -24,6 +24,8 @@ import LeftFixedUserProfile from "./LeftFixedUserProfile.jsx";
 import DatePicker from "react-flatpickr";
 import MultiSelectComponent from "./MultiSelectComponent.jsx";
 import SelectCustom from "./CustomSelect.jsx";
+import SimpleDropDown from "./SimpleDropDown.jsx";
+import CheckBoxFilter from "./CheckBoxFilter/CheckBoxFilter.jsx";
 
 const theme = extendTheme({
   components: {
@@ -134,7 +136,6 @@ const timeLineData = [
 
 function App() {
   const [selectedRange, setSelectedRange] = useState([]);
-
   const [editEmail, setEditEmail] = useState("hdshjjdsd@gggs.com");
   const [editLanguage, setEditLanguage] = useState("Hindi");
   const [editMobile, setEditMobile] = useState("98y873473");
@@ -162,9 +163,14 @@ function App() {
 
   console.log(multiInputValues);
 
+
+
+  const [selectedValue, setSelectedValue] = useState("This Month")
+  const [options, setOptions] = useState(source)
+
   return (
     <ChakraProvider theme={theme}>
-      <div style={{ padding: 30 }} className="App">
+      {/* <div style={{ padding: 30 }} className="App">
         <DatePicker />
         <br />
         <br />
@@ -210,13 +216,13 @@ function App() {
         >
           <CustomCarousel ratingData={testimonials} />
         </div>
-      </div>
+      </div> */}
       {/* <ChatAPIG/> */}
       <div style={{ padding: 30 }}>
         {/* <TableWithPagination />
         <br />
         <br />
-        <TableComponent />
+       
         <br />
         <br />
         <TimelineComponent TimeLineData={timeLineData} />
@@ -243,7 +249,7 @@ function App() {
           customCount={32323}
           staticCount={54654}
         /> */}
-        <MultiSelectComponent
+        {/* <MultiSelectComponent
           colorScheme="green"
           isClearable={false}
           useBasicStyles
@@ -253,13 +259,13 @@ function App() {
           multiInputValues={multiInputValues}
           options={Coloroptions}
           placeholder="Select"
-        />
+        /> */}
 
         {/* <SelectCustom/> */}
         <br />
         <br />
         <br />
-        <LeftFixedUserProfile
+        {/* <LeftFixedUserProfile
           name="Hitesh Kumar"
           mobileNumber="83076t7632"
           email="hitesh@omind.ai"
@@ -273,10 +279,64 @@ function App() {
           editLanguage={editLanguage}
           setEditLanguage={setEditLanguage}
           editing={true}
-        />
+        /> */} 
+        {/* <TableComponent /> */}
+        <SimpleDropDown selectedValue={selectedValue} options={options} setSelectedValue={setSelectedValue} />
+        <br />
+        <br />
+        <br />
+        <br />
+        <CheckBoxFilter options={options} setOptions={setOptions}/>
       </div>
     </ChakraProvider>
   );
 }
 
 export default App;
+
+const options = [
+  {
+    value: "This Month",
+    label: "This Month",
+    index: 0,
+  },
+  {
+    value: "Last 7 Days",
+    label: "Last 7 Days",
+    index: 1,
+  },
+  {
+    value: "Last 30 Days",
+    label: "Last 30 Days",
+    index: 2,
+  },
+  {
+    value: "Last 90 Days",
+    label: "Last 90 Days",
+    index: 3,
+  },
+  {
+    value: "Today",
+    label: "Today",
+    index: 4,
+  },
+];
+
+const source = [
+  {
+    source: "Source 1",
+    checked: false,
+  },
+  {
+    source: "Source 2",
+    checked: false,
+  },
+  {
+    source: "Source 3",
+    checked: false,
+  },
+  {
+    source: "Source 4",
+    checked: false,
+  },
+];
