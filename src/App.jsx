@@ -26,6 +26,7 @@ import MultiSelectComponent from "./MultiSelectComponent.jsx";
 import SelectCustom from "./CustomSelect.jsx";
 import SimpleDropDown from "./SimpleDropDown.jsx";
 import CheckBoxFilter from "./CheckBoxFilter/CheckBoxFilter.jsx";
+import SystemAttributesTablecomponent from "./systemAttributesTable/SystemAttributesTable.jsx";
 
 const theme = extendTheme({
   components: {
@@ -281,12 +282,13 @@ function App() {
           editing={true}
         /> */} 
         {/* <TableComponent /> */}
-        <SimpleDropDown selectedValue={selectedValue} options={DWoptions} setSelectedValue={setSelectedValue} />
+        {/* <SimpleDropDown selectedValue={selectedValue} options={DWoptions} setSelectedValue={setSelectedValue} /> */}
         <br />
         <br />
         <br />
+        <SystemAttributesTablecomponent/>
         <br />
-        <CheckBoxFilter options={options} setOptions={setOptions}/>
+        {/* <CheckBoxFilter options={options} setOptions={setOptions}/> */}
       </div>
     </ChakraProvider>
   );
