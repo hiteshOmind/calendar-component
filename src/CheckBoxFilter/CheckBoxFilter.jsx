@@ -39,7 +39,7 @@ function CheckBoxFilter(props) {
     <>
       <Popover isOpen={open}>
         <PopoverTrigger >
-          <Button onClick={()=>setOpen(!open)} _hover={{ backgroundColor: "none" }} variant={"outline"}>
+          <Button width={"160px"} onClick={()=>setOpen(!open)} _hover={{ backgroundColor: "none" }} variant={"outline"}>
             <Box
               display={"flex"}
               justifyContent={"cneter"}

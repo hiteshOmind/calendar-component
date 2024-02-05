@@ -281,7 +281,7 @@ function App() {
           editing={true}
         /> */} 
         {/* <TableComponent /> */}
-        <SimpleDropDown selectedValue={selectedValue} options={options} setSelectedValue={setSelectedValue} />
+        <SimpleDropDown selectedValue={selectedValue} options={DWoptions} setSelectedValue={setSelectedValue} />
         <br />
         <br />
         <br />
@@ -294,7 +294,7 @@ function App() {
 
 export default App;
 
-const options = [
+const DWoptions = [
   {
     value: "This Month",
     label: "This Month",
