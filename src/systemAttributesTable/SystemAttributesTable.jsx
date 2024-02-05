@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { useState } from "react";
 import {
   Box,
@@ -15,10 +15,10 @@ import {
   PopoverContent,
 } from "@chakra-ui/react";
 import Pagination from "../Pagination";
-import BurgerMenuImg from "./burgerMenu.svg"
-import editIcon from "./editIcon.svg"
-import eyeIcon from "./eyeIcon.svg"
-import closeEyeIcon from "./closeEyeIcon.svg"
+import BurgerMenuImg from "./burgerMenu.svg";
+import editIcon from "./editIcon.svg";
+import eyeIcon from "./eyeIcon.svg";
+import closeEyeIcon from "./closeEyeIcon.svg";
 
 function SystemAttributesTablecomponent() {
   return (
@@ -192,11 +192,13 @@ export const TableWithPagination = () => {
                 </Text>
               </Td>
               <Td paddingLeft={"16px"}>
-                <Text
-                  fontSize={14}
-                  textTransform={"none"}
-                  fontWeight={400}
-                ><BurgerMenu id={item.id} enabled={item.status} key={item.id} /></Text>
+                <Text fontSize={14} textTransform={"none"} fontWeight={400}>
+                  <BurgerMenu
+                    id={item.id}
+                    enabled={item.status}
+                    key={item.id}
+                  />
+                </Text>
               </Td>
             </Tr>
           ))}
@@ -244,47 +246,65 @@ const CustomCheckBox = (props) => {
 };
 
 const BurgerMenu = (props) => {
+  const [open, setOpen] = useState(false);
 
-    const [open, setOpen] = useState(false)
+  const handleClose = () => {
+    setOpen(false);
+  };
 
-    const handleClose = () => {
-        setOpen(false)
+  // your id here
+  console.log(props.id);
+
+  //handle functions here
+  const handleEdit = () => {
+    handleClose();
+  };
+
+  // enable disable logic below
+  const handleEnableDisable = () => {
+    if (props.enabled) {
+      handleClose();
+    } else {
+      handleClose();
     }
-
-    // your id here
-    console.log(props.id)
-
-    //handle functions here
-    const handleEdit = () => {
-        handleClose()
-    }
-
-    // enable disable logic below
-    const handleEnableDisable = () =>{
-       if(props.enabled){
-
-        handleClose()
-       }else{
-
-        handleClose()
-       } 
-    }
+  };
 
   return (
     <>
       <Popover {...props}>
         <PopoverTrigger>
-          <img onClick={()=>setOpen(!open)} style={{cursor:"pointer"}} alt="burger menu" src={BurgerMenuImg}></img>
+          <img
+            style={{ cursor: "pointer" }}
+            alt="burger menu"
+            src={BurgerMenuImg}
+          ></img>
         </PopoverTrigger>
         <PopoverContent width="118px">
-         <Box cursor={"pointer"} onClick={handleEnableDisable} gap={"8px"} display={"flex"} alignItems={"center"} padding={"8px 14px"}>
-            <img src={props.enabled ? closeEyeIcon : eyeIcon } alt="enable or disable" />
+          <Box
+            cursor={"pointer"}
+            onClick={handleEnableDisable}
+            gap={"8px"}
+            display={"flex"}
+            alignItems={"center"}
+            padding={"8px 14px"}
+          >
+            <img
+              src={props.enabled ? closeEyeIcon : eyeIcon}
+              alt="enable or disable"
+            />
             <Text>{props.enabled ? "Disable" : "Enable"}</Text>
-         </Box>
-         <Box cursor={"pointer"} onClick={handleEdit} gap={"8px"} display={"flex"} alignItems={"center"} padding={"8px 14px"}>
-            <img src={editIcon} alt="editIcon"/>
+          </Box>
+          <Box
+            cursor={"pointer"}
+            onClick={handleEdit}
+            gap={"8px"}
+            display={"flex"}
+            alignItems={"center"}
+            padding={"8px 14px"}
+          >
+            <img src={editIcon} alt="editIcon" />
             <Text>Edit</Text>
-         </Box>
+          </Box>
         </PopoverContent>
       </Popover>
     </>
