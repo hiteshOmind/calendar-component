@@ -222,7 +222,7 @@ export const TableWithPagination = ({ checkBoxTable = false }) => {
 
   return (
     <Box border={"1px solid rgba(234, 236, 240, 1)"} borderRadius={10}>
-      <Box height={"400px"} overflowY={"scroll"}>
+      <Box height={"calc(100vh - 300px)"} overflowY={"scroll"}>
         <Table>
           <Thead position={"sticky"} top={0} zIndex={2} color="475467">
             <Tr style={{ backgroundColor: "rgba(249, 250, 251, 1)" }}>
@@ -362,6 +362,8 @@ export const TableWithPagination = ({ checkBoxTable = false }) => {
       </Box>
 
       <Box
+        position={"sticky"}
+        bottom={0}
         flex
         justifyContent={"center"}
         alignItems={"center"}

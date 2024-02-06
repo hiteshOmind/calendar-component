@@ -28,6 +28,8 @@ import SimpleDropDown from "./SimpleDropDown.jsx";
 import CheckBoxFilter from "./CheckBoxFilter/CheckBoxFilter.jsx";
 import SystemAttributesTablecomponent from "./systemAttributesTable/SystemAttributesTable.jsx";
 import FilterPopup from "./filterPopup/FilterPopup.jsx";
+import EditAttributePopup from "./editAttributePopup/EditAttributePopup.jsx";
+import TimeLineIntegration from "./TimeLineIntegration.jsx";
 
 const theme = extendTheme({
   components: {
@@ -247,18 +249,19 @@ function App() {
           setEditLanguage={setEditLanguage}
           editing={true}
         /> */}
-        <TableComponent />
+        {/* <TableComponent /> */}
         {/* <SimpleDropDown
           selectedValue={selectedValue}
           options={DWoptions}
           setSelectedValue={setSelectedValue}
         /> */}
-      
         {/* <SystemAttributesTablecomponent />
         <FilterPopup />
         <SelectCustom /> */}
-   
         {/* <CheckBoxFilter options={options} setOptions={setOptions} /> */}
+        <TimeLineIntegration TimeLineData={timeLineData}/>
+
+        <EditAttributePopup/>
       </div>
     </ChakraProvider>
   );

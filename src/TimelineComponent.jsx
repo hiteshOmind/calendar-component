@@ -13,7 +13,7 @@ import { FiPlusCircle } from "react-icons/fi";
 import { FiCheckCircle } from "react-icons/fi";
 import { IoChevronDown } from "react-icons/io5";
 
-const TimelineComponent = ({ TimeLineData }) => {
+const TimelineComponent = ({ TimeLineData, canExpand = true }) => {
   return (
     <Box width={"100%"}>
       <VStack textAlign="start" align="start" mb={5}>
@@ -24,6 +24,7 @@ const TimelineComponent = ({ TimeLineData }) => {
                 key={index}
                 item={item}
                 icon={FiPlusCircle}
+                canExpand={canExpand}
                 skipTrail={index === TimeLineData.length - 1 ? true : false}
               ></MilestoneItem>
             ))}
@@ -40,6 +41,7 @@ const MilestoneItem = ({
   skipTrail,
   children,
   item,
+  canExpand,
   ...props
 }) => {
   const color = useColorModeValue("gray.700", "gray.500");
@@ -52,7 +54,13 @@ const MilestoneItem = ({
           size={"40px"}
           bg={isCardOpen ? "rgba(7, 43, 21, 1)" : "rgba(234, 236, 240, 1)"}
         />
-        <Box as={icon} size="16px" color={isCardOpen ? "#fff" : color} pos="absolute" top={"12px"} />
+        <Box
+          as={icon}
+          size="16px"
+          color={isCardOpen ? "#fff" : color}
+          pos="absolute"
+          top={"12px"}
+        />
         {!skipTrail && <Box w="2px" flex={1} bg={"rgba(234, 236, 240, 1)"} />}
       </Flex>
       <Box width={"100%"} {...boxProps}>
@@ -89,22 +97,26 @@ const MilestoneItem = ({
               </Text>
             </Box>
           </Box>
-          <Box>
-            <Button
-              onClick={() => setIsCardOpen(!isCardOpen)}
-              rightIcon={<IoChevronDown size={20} />}
-              fontSize={14}
-              fontWeight={600}
-              colorScheme="none"
-              color="rgba(18, 110, 54, 1)"
-              variant="outline"
-              border={"none"}
-              backgroundColor={"none"}
-              _hover={{ backgroundColor: "none" }}
-            >
-              Show Details
-            </Button>
-          </Box>
+          {canExpand ? (
+            <Box>
+              <Button
+                onClick={() => setIsCardOpen(!isCardOpen)}
+                rightIcon={<IoChevronDown size={20} />}
+                fontSize={14}
+                fontWeight={600}
+                colorScheme="none"
+                color="rgba(18, 110, 54, 1)"
+                variant="outline"
+                border={"none"}
+                backgroundColor={"none"}
+                _hover={{ backgroundColor: "none" }}
+              >
+                Show Details
+              </Button>
+            </Box>
+          ) : (
+            ""
+          )}
         </Box>
         {isCardOpen ? (
           <Card
