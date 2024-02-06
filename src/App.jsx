@@ -27,6 +27,7 @@ import SelectCustom from "./CustomSelect.jsx";
 import SimpleDropDown from "./SimpleDropDown.jsx";
 import CheckBoxFilter from "./CheckBoxFilter/CheckBoxFilter.jsx";
 import SystemAttributesTablecomponent from "./systemAttributesTable/SystemAttributesTable.jsx";
+import FilterPopup from "./filterPopup/FilterPopup.jsx";
 
 const theme = extendTheme({
   components: {
@@ -146,69 +147,46 @@ function App() {
       label: "hello",
       value: "hello",
       className: "custom-option",
-      id:"text"
+      id: "text",
     },
     {
       label: "groot",
       value: "groot",
       className: "custom-option",
-      id:"text"
+      id: "text",
     },
   ];
 
-  console.log(editEmail, editLanguage, editMobile);
-
-  console.log(selectedRange);
-
   const [multiInputValues, setMultiInputValues] = useState([]);
 
-  console.log(multiInputValues);
-
-
-
-  const [selectedValue, setSelectedValue] = useState("This Month")
-  const [options, setOptions] = useState(source)
+  const [selectedValue, setSelectedValue] = useState("This Month");
+  const [options, setOptions] = useState(source);
 
   return (
     <ChakraProvider theme={theme}>
-      {/* <div style={{ padding: 30 }} className="App">
-        <DatePicker />
-        <br />
-        <br />
-        <DateRangePickerPopover
+      <div style={{ padding: 30 }} className="App">
+        {/* <DatePicker /> */}
+        {/* <DateRangePickerPopover
+          mode="single"
           left={true}
           selectedRange={selectedRange}
           setSelectedRange={setSelectedRange}
-        />
-        <br />
-        <br />
-        <br />
-
-        <YourComponent />
-        <br />
-        <br />
-        <br />
+        /> */}
+        {/* <YourComponent /> */}
         <div>
-          <LineStepper steps={steps} />
+          {/* <LineStepper steps={steps} /> */}
         </div>
-        <br />
-        <br />
-        <LogoUploader />
-        <br />
-        <br />
-        <BusinessInfoForm />
-        <br />
-        <br />
-        <BusinessDeatailForm />
-        <br />
-        <br />
-        <ActivateAccountForm1 />
-        <br />
-        <br />
-        <ActivateAccountForm2 />
-        <br />
-        <br />
-        <div
+        {/* <LogoUploader /> */}
+  
+        {/* <BusinessInfoForm /> */}
+  
+        {/* <BusinessDeatailForm /> */}
+  
+        {/* <ActivateAccountForm1 /> */}
+  
+        {/* <ActivateAccountForm2 /> */}
+
+        {/* <div
           style={{
             backgroundColor: "green",
             paddingTop: "20px",
@@ -216,36 +194,27 @@ function App() {
           }}
         >
           <CustomCarousel ratingData={testimonials} />
-        </div>
-      </div> */}
+        </div> */}
+      </div>
       {/* <ChatAPIG/> */}
       <div style={{ padding: 30 }}>
-        {/* <TableWithPagination />
-        <br />
-        <br />
-       
-        <br />
-        <br />
-        <TimelineComponent TimeLineData={timeLineData} />
-        <br />
-        <br />
-        <LastPurchasedCard
+        {/* <TableWithPagination /> */}
+     
+        {/* <TimelineComponent TimeLineData={timeLineData} /> */}
+  
+        {/* <LastPurchasedCard
           productName={"Hitesh Kumar"}
           orderDate={"12 Jan 2023"}
-        />
-        <br />
-        <br />
-        <br />
-        <UserRelationsCard
+        /> */}
+     
+        {/* <UserRelationsCard
           revenue={"$1235"}
           firstOrderDate={"12 Dec 2023"}
           LastOrderDate={"12 Jan 2023"}
           lastSeen={"12 Dec 2023"}
-        />
-        <br />
-        <br />
-        <br />
-        <SegmentAssociationCard
+        /> */}
+     
+        {/* <SegmentAssociationCard
           rfmCount={1288}
           customCount={32323}
           staticCount={54654}
@@ -261,11 +230,8 @@ function App() {
           options={Coloroptions}
           placeholder="Select"
         /> */}
-
-        {/* <SelectCustom/> */}
-        <br />
-        <br />
-        <br />
+        {/* <SelectCustom /> */}
+ 
         {/* <LeftFixedUserProfile
           name="Hitesh Kumar"
           mobileNumber="83076t7632"
@@ -280,15 +246,19 @@ function App() {
           editLanguage={editLanguage}
           setEditLanguage={setEditLanguage}
           editing={true}
-        /> */} 
-        {/* <TableComponent /> */}
-        {/* <SimpleDropDown selectedValue={selectedValue} options={DWoptions} setSelectedValue={setSelectedValue} /> */}
-        <br />
-        <br />
-        <br />
-        <SystemAttributesTablecomponent/>
-        <br />
-        {/* <CheckBoxFilter options={options} setOptions={setOptions}/> */}
+        /> */}
+        <TableComponent />
+        {/* <SimpleDropDown
+          selectedValue={selectedValue}
+          options={DWoptions}
+          setSelectedValue={setSelectedValue}
+        /> */}
+      
+        {/* <SystemAttributesTablecomponent />
+        <FilterPopup />
+        <SelectCustom /> */}
+   
+        {/* <CheckBoxFilter options={options} setOptions={setOptions} /> */}
       </div>
     </ChakraProvider>
   );

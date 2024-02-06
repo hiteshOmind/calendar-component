@@ -19,8 +19,8 @@ import {
 export const DateRangePickerPopover = ({
   selectedRange,
   setSelectedRange,
-  mode = "single",
-  left = true,
+  mode="range",
+  left=true,
 }) => {
   const flatpickrRef = useRef(null);
   // const [selectedRange, setSelectedRange] = useState([]);
@@ -32,16 +32,19 @@ export const DateRangePickerPopover = ({
     dateConvertHelper(selectedDates);
   };
 
+
   const dateConvertHelper = (selectedDates) => {
     const dateOptions = { month: "short", day: "numeric", year: "numeric" };
     const formattedStartDate = selectedDates[0]?.toLocaleDateString(
       "en-US",
       dateOptions
     );
+
     const formattedEndDate = selectedDates[1]
       ? selectedDates[1].toLocaleDateString("en-US", dateOptions)
       : "";
-    if (mode === "multi") {
+
+    if (mode === "range") {
       setInputValue(`${formattedStartDate} - ${formattedEndDate}`);
     } else {
       setInputValue(formattedStartDate);

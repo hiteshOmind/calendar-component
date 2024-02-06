@@ -88,6 +88,96 @@ export const TableWithPagination = ({ checkBoxTable = false }) => {
       recentCampaign:
         "Fugiat proident Lorem commodo Lorem deserunt do mollit commodo sunt. Laborum duis dolore deserunt duis sit laboris occaecat.",
     },
+    {
+      imgUrl: "http://placehold.it/32x32",
+      name: "Dominique Burnett",
+      email: "dominiqueburnett@corecom.com",
+      phone: "+1 (968) 440-2715",
+      addedOn: "Sun Apr 26 1987 22:53:28 GMT+0530 (India Standard Time)",
+      lastKnownSource: "Masthope",
+      recentCampaign:
+        "Fugiat proident Lorem commodo Lorem deserunt do mollit commodo sunt. Laborum duis dolore deserunt duis sit laboris occaecat.",
+    },
+    {
+      imgUrl: "http://placehold.it/32x32",
+      name: "Dominique Burnett",
+      email: "dominiqueburnett@corecom.com",
+      phone: "+1 (968) 440-2715",
+      addedOn: "Sun Apr 26 1987 22:53:28 GMT+0530 (India Standard Time)",
+      lastKnownSource: "Masthope",
+      recentCampaign:
+        "Fugiat proident Lorem commodo Lorem deserunt do mollit commodo sunt. Laborum duis dolore deserunt duis sit laboris occaecat.",
+    },
+    {
+      imgUrl: "http://placehold.it/32x32",
+      name: "Dominique Burnett",
+      email: "dominiqueburnett@corecom.com",
+      phone: "+1 (968) 440-2715",
+      addedOn: "Sun Apr 26 1987 22:53:28 GMT+0530 (India Standard Time)",
+      lastKnownSource: "Masthope",
+      recentCampaign:
+        "Fugiat proident Lorem commodo Lorem deserunt do mollit commodo sunt. Laborum duis dolore deserunt duis sit laboris occaecat.",
+    },
+    {
+      imgUrl: "http://placehold.it/32x32",
+      name: "Dominique Burnett",
+      email: "dominiqueburnett@corecom.com",
+      phone: "+1 (968) 440-2715",
+      addedOn: "Sun Apr 26 1987 22:53:28 GMT+0530 (India Standard Time)",
+      lastKnownSource: "Masthope",
+      recentCampaign:
+        "Fugiat proident Lorem commodo Lorem deserunt do mollit commodo sunt. Laborum duis dolore deserunt duis sit laboris occaecat.",
+    },
+    {
+      imgUrl: "http://placehold.it/32x32",
+      name: "Dominique Burnett",
+      email: "dominiqueburnett@corecom.com",
+      phone: "+1 (968) 440-2715",
+      addedOn: "Sun Apr 26 1987 22:53:28 GMT+0530 (India Standard Time)",
+      lastKnownSource: "Masthope",
+      recentCampaign:
+        "Fugiat proident Lorem commodo Lorem deserunt do mollit commodo sunt. Laborum duis dolore deserunt duis sit laboris occaecat.",
+    },
+    {
+      imgUrl: "http://placehold.it/32x32",
+      name: "Dominique Burnett",
+      email: "dominiqueburnett@corecom.com",
+      phone: "+1 (968) 440-2715",
+      addedOn: "Sun Apr 26 1987 22:53:28 GMT+0530 (India Standard Time)",
+      lastKnownSource: "Masthope",
+      recentCampaign:
+        "Fugiat proident Lorem commodo Lorem deserunt do mollit commodo sunt. Laborum duis dolore deserunt duis sit laboris occaecat.",
+    },
+    {
+      imgUrl: "http://placehold.it/32x32",
+      name: "Dominique Burnett",
+      email: "dominiqueburnett@corecom.com",
+      phone: "+1 (968) 440-2715",
+      addedOn: "Sun Apr 26 1987 22:53:28 GMT+0530 (India Standard Time)",
+      lastKnownSource: "Masthope",
+      recentCampaign:
+        "Fugiat proident Lorem commodo Lorem deserunt do mollit commodo sunt. Laborum duis dolore deserunt duis sit laboris occaecat.",
+    },
+    {
+      imgUrl: "http://placehold.it/32x32",
+      name: "Dominique Burnett",
+      email: "dominiqueburnett@corecom.com",
+      phone: "+1 (968) 440-2715",
+      addedOn: "Sun Apr 26 1987 22:53:28 GMT+0530 (India Standard Time)",
+      lastKnownSource: "Masthope",
+      recentCampaign:
+        "Fugiat proident Lorem commodo Lorem deserunt do mollit commodo sunt. Laborum duis dolore deserunt duis sit laboris occaecat.",
+    },
+    {
+      imgUrl: "http://placehold.it/32x32",
+      name: "Dominique Burnett",
+      email: "dominiqueburnett@corecom.com",
+      phone: "+1 (968) 440-2715",
+      addedOn: "Sun Apr 26 1987 22:53:28 GMT+0530 (India Standard Time)",
+      lastKnownSource: "Masthope",
+      recentCampaign:
+        "Fugiat proident Lorem commodo Lorem deserunt do mollit commodo sunt. Laborum duis dolore deserunt duis sit laboris occaecat.",
+    },
   ]);
   const [currentPage, setCurrentPage] = useState(1);
   const [selectAll, setSelectAll] = useState(false);
@@ -132,134 +222,145 @@ export const TableWithPagination = ({ checkBoxTable = false }) => {
 
   return (
     <Box border={"1px solid rgba(234, 236, 240, 1)"} borderRadius={10}>
-      <Table>
-        <Thead color="475467">
-          <Tr style={{ backgroundColor: "rgba(249, 250, 251, 1)" }}>
-            <Th paddingLeft={"16px"} borderTopLeftRadius={10}>
-              <Box style={{ display: "flex" }} gap={3}>
-                {checkBoxTable ? (
-                  <Checkbox
-                    isChecked={selectAll}
-                    onChange={handleSelectAllChange}
-                  />
-                ) : (
-                  ""
-                )}
+      <Box height={"400px"} overflowY={"scroll"}>
+        <Table>
+          <Thead position={"sticky"} top={0} zIndex={2} color="475467">
+            <Tr style={{ backgroundColor: "rgba(249, 250, 251, 1)" }}>
+              <Th paddingLeft={"16px"} borderTopLeftRadius={10}>
+                <Box style={{ display: "flex" }} gap={3}>
+                  {checkBoxTable ? (
+                    <Checkbox
+                      isChecked={selectAll}
+                      onChange={handleSelectAllChange}
+                    />
+                  ) : (
+                    ""
+                  )}
+                  <Text fontSize={12} textTransform={"none"} fontWeight={500}>
+                    {header.name}
+                  </Text>
+                </Box>
+              </Th>
+              <Th>
                 <Text fontSize={12} textTransform={"none"} fontWeight={500}>
-                  {header.name}
+                  {header.mobile}
                 </Text>
-              </Box>
-            </Th>
-            <Th>
-              <Text fontSize={12} textTransform={"none"} fontWeight={500}>
-                {header.mobile}
-              </Text>
-            </Th>
-            <Th>
-              <Text fontSize={12} textTransform={"none"} fontWeight={500}>
-                {header.email}
-              </Text>
-            </Th>
-            <Th>
-              <Text fontSize={12} textTransform={"none"} fontWeight={500}>
-                {header.addedOn}
-              </Text>
-            </Th>
-            <Th>
-              <Text fontSize={12} textTransform={"none"} fontWeight={500}>
-                {header.lastKnownSource}
-              </Text>
-            </Th>
-            <Th>
-              <Text fontSize={12} textTransform={"none"} fontWeight={500}>
-                {header.recentcampaign}
-              </Text>
-            </Th>
-            <Th borderTopRightRadius={10}></Th>
-          </Tr>
-        </Thead>
-        <Tbody color={"#667085"}>
-          {currentItems.map((item, index) => (
-            <Tr key={index}>
-              <Td paddingLeft={"16px"}>
-                <Box
-                  style={{
-                    display: "flex",
-                    alignItems: "center",
-                    gap: "8px",
-                  }}
-                >
-                  <Avatar width={"32px"} height={"32px"} src="" />
-                  <Box>
-                    <Text fontSize={14} textTransform={"none"} fontWeight={400}>
-                      {item.name}
+              </Th>
+              <Th>
+                <Text fontSize={12} textTransform={"none"} fontWeight={500}>
+                  {header.email}
+                </Text>
+              </Th>
+              <Th>
+                <Text fontSize={12} textTransform={"none"} fontWeight={500}>
+                  {header.addedOn}
+                </Text>
+              </Th>
+              <Th>
+                <Text fontSize={12} textTransform={"none"} fontWeight={500}>
+                  {header.lastKnownSource}
+                </Text>
+              </Th>
+              <Th>
+                <Text fontSize={12} textTransform={"none"} fontWeight={500}>
+                  {header.recentcampaign}
+                </Text>
+              </Th>
+              <Th borderTopRightRadius={10}></Th>
+            </Tr>
+          </Thead>
+          <Tbody color={"#667085"}>
+            {data.map((item, index) => (
+              <Tr key={index}>
+                <Td padding={"12px 16px 12px 16px"}>
+                  <Box
+                    style={{
+                      display: "flex",
+                      alignItems: "center",
+                      gap: "8px",
+                    }}
+                  >
+                    <Avatar width={"32px"} height={"32px"} src="" />
+                    <Box>
+                      <Text
+                        fontSize={14}
+                        textTransform={"none"}
+                        fontWeight={400}
+                      >
+                        {item.name}
+                      </Text>
+                    </Box>
+                  </Box>
+                </Td>
+                <Td>
+                  <Text fontSize={14} textTransform={"none"} fontWeight={400}>
+                    {item.phone}
+                  </Text>
+                </Td>
+
+                <Td>
+                  <Text fontSize={14} textTransform={"none"} fontWeight={400}>
+                    {item.email}
+                  </Text>
+                </Td>
+                <Td>
+                  <Text fontSize={14} textTransform={"none"} fontWeight={400}>
+                    {formatDate(item.addedOn)}
+                  </Text>
+                </Td>
+                <Td>
+                  <Text fontSize={14} textTransform={"none"} fontWeight={400}>
+                    {item.lastKnownSource}
+                  </Text>
+                </Td>
+                <Td>
+                  <Box
+                    style={{
+                      display: "flex",
+                      alignItems: "center",
+                      gap: "8px",
+                    }}
+                  >
+                    <Icon mt={1} width={"20px"} height={"20px"} fill={"none"}>
+                      <path
+                        d="M18.3337 4.99967C18.3337 4.08301 17.5837 3.33301 16.667 3.33301H3.33366C2.41699 3.33301 1.66699 4.08301 1.66699 4.99967M18.3337 4.99967V14.9997C18.3337 15.9163 17.5837 16.6663 16.667 16.6663H3.33366C2.41699 16.6663 1.66699 15.9163 1.66699 14.9997V4.99967M18.3337 4.99967L10.0003 10.833L1.66699 4.99967"
+                        stroke="#667085"
+                        stroke-width="1.5"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                      />
+                    </Icon>
+                    <Text
+                      style={{
+                        whiteSpace: "nowrap",
+                        overflow: "hidden",
+                        textOverflow: "ellipsis",
+                        width: "170px",
+                      }}
+                      fontSize={14}
+                      textTransform={"none"}
+                      fontWeight={400}
+                    >
+                      {item.recentCampaign}
                     </Text>
                   </Box>
-                </Box>
-              </Td>
-              <Td>
-                <Text fontSize={14} textTransform={"none"} fontWeight={400}>
-                  {item.phone}
-                </Text>
-              </Td>
+                </Td>
+                <Td paddingRight={"16px"}>
+                  <Text
+                    fontSize={14}
+                    color={"#126E36"}
+                    textTransform={"none"}
+                    fontWeight={600}
+                  >
+                    View
+                  </Text>
+                </Td>
+              </Tr>
+            ))}
+          </Tbody>
+        </Table>
+      </Box>
 
-              <Td>
-                <Text fontSize={14} textTransform={"none"} fontWeight={400}>
-                  {item.email}
-                </Text>
-              </Td>
-              <Td>
-                <Text fontSize={14} textTransform={"none"} fontWeight={400}>
-                  {formatDate(item.addedOn)}
-                </Text>
-              </Td>
-              <Td>
-                <Text fontSize={14} textTransform={"none"} fontWeight={400}>
-                  {item.lastKnownSource}
-                </Text>
-              </Td>
-              <Td>
-                <Box style={{display:"flex", alignItems:"center", gap:"8px"}}>
-
-                <Icon mt={1} width={"20px"} height={"20px"} fill={"none"}>
-                    <path
-                      d="M18.3337 4.99967C18.3337 4.08301 17.5837 3.33301 16.667 3.33301H3.33366C2.41699 3.33301 1.66699 4.08301 1.66699 4.99967M18.3337 4.99967V14.9997C18.3337 15.9163 17.5837 16.6663 16.667 16.6663H3.33366C2.41699 16.6663 1.66699 15.9163 1.66699 14.9997V4.99967M18.3337 4.99967L10.0003 10.833L1.66699 4.99967"
-                      stroke="#667085"
-                      stroke-width="1.5"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                    />
-                </Icon>
-                <Text
-                  style={{
-                    whiteSpace: "nowrap",
-                    overflow: "hidden",
-                    textOverflow: "ellipsis",
-                    width: "170px",
-                  }}
-                  fontSize={14}
-                  textTransform={"none"}
-                  fontWeight={400}
-                >
-                  {item.recentCampaign}
-                </Text>
-
-                </Box>
-              </Td>
-              <Td paddingRight={"16px"}>
-                <Text
-                  fontSize={14}
-                  color={"#126E36"}
-                  textTransform={"none"}
-                  fontWeight={600}
-                >
-                  View
-                </Text>
-              </Td>
-            </Tr>
-          ))}
-        </Tbody>
-      </Table>
       <Box
         flex
         justifyContent={"center"}
