@@ -30,6 +30,8 @@ import SystemAttributesTablecomponent from "./systemAttributesTable/SystemAttrib
 import FilterPopup from "./filterPopup/FilterPopup.jsx";
 import EditAttributePopup from "./editAttributePopup/EditAttributePopup.jsx";
 import TimeLineIntegration from "./TimeLineIntegration.jsx";
+import AddAttributePopup from "./addAttributePopup/AddAttributePopup.jsx";
+import DeleteAttributePopup from "./deleteAttributePopup/DeleteAttributePopup.jsx"
 
 const theme = extendTheme({
   components: {
@@ -262,6 +264,8 @@ function App() {
         <TimeLineIntegration TimeLineData={timeLineData}/>
 
         <EditAttributePopup/>
+        <AddAttributePopup/>
+        <DeleteAttributePopup/>
       </div>
     </ChakraProvider>
   );

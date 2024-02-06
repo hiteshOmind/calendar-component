@@ -19,6 +19,7 @@ import BurgerMenuImg from "./burgerMenu.svg";
 import editIcon from "./editIcon.svg";
 import eyeIcon from "./eyeIcon.svg";
 import closeEyeIcon from "./closeEyeIcon.svg";
+import deleteIcon from "./deleteIcon.svg";
 
 function SystemAttributesTablecomponent() {
   return (
@@ -305,6 +306,22 @@ const BurgerMenu = (props) => {
             <img src={editIcon} alt="editIcon" />
             <Text>Edit</Text>
           </Box>
+
+          {props?.customAttributeTable ? (
+            <Box
+              cursor={"pointer"}
+              onClick={handleEdit}
+              gap={"8px"}
+              display={"flex"}
+              alignItems={"center"}
+              padding={"8px 14px"}
+            >
+              <img src={deleteIcon} alt="editIcon" />
+              <Text>Delete</Text>
+            </Box>
+          ) : (
+            ""
+          )}
         </PopoverContent>
       </Popover>
     </>

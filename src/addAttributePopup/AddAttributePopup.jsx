@@ -13,15 +13,16 @@ import {
   useDisclosure,
   Input,
   Textarea,
-  Checkbox,
   Switch,
   extendTheme,
   ChakraProvider,
+  Icon,
 } from "@chakra-ui/react";
 import React, { useEffect, useState } from "react";
-import { Select as RSelect } from "chakra-react-select";
+import { AddIcon } from "@chakra-ui/icons";
+import { CustomSelectDropDown } from "../customSelectDropDown/CustomSelectDropDown";
 
-function EditAttributePopup(props) {
+function AddAttributePopup() {
   const { isOpen, onOpen, onClose } = useDisclosure();
   const cancelRef = React.useRef();
 
@@ -32,16 +33,20 @@ function EditAttributePopup(props) {
   const [enableStatus, setenableStatus] = useState(false);
 
   const handleCancelClick = () => {
+    setdataType("");
     setdescription("");
-    markPII(false);
+    setlabelName("");
     setenableStatus(false);
+    setmarkPII(false);
     onClose();
   };
 
   return (
     <div>
       <Button
-        width={"95px"}
+        leftIcon={<AddIcon />}
+        backgroundColor={"#072B15"}
+        color="#fff"
         _hover={{ backgroundColor: "none" }}
         variant={"outline"}
         onClick={onOpen}
@@ -52,7 +57,9 @@ function EditAttributePopup(props) {
           alignItems={"center"}
           gap={"8px"}
         >
-          <Text>Open</Text>
+          <Text fontSize={"14px"} fontWeight={600}>
+            Add Attribute
+          </Text>
         </Box>
       </Button>
       <Modal
@@ -70,7 +77,7 @@ function EditAttributePopup(props) {
             fontSize={20}
             fontWeight={600}
           >
-            Edit Attribute
+            Add Attribute
           </ModalHeader>
           <ModalCloseButton mt={2} color={"#101828"} />
           <ModalBody
@@ -89,13 +96,16 @@ function EditAttributePopup(props) {
                 Default Label Name
               </FormLabel>
               <Input
-                bg="#F2F4F7"
-                borderColor={"#D0D5DD"}
-                disabled
+                value={labelName}
+                onChange={(e) => setlabelName(e.target.value)}
                 variant="outline"
-                placeholder="Outline"
-                value={"hello I am input"}
+                placeholder="Label Name"
               />
+            </Box>
+
+            <Box display={"flex"} alignItems={"center"} gap="16px">
+                <Text fontSize={16} fontWeight={500}  color="#667085">Variable Name</Text>
+                <Text fontSize={16} fontWeight={500} color={"#101828"}>{labelName}</Text>
             </Box>
             <Box>
               <FormLabel
@@ -106,7 +116,11 @@ function EditAttributePopup(props) {
               >
                 Description
               </FormLabel>
-              <Textarea height={"68px"} />
+              <Textarea
+                value={description}
+                onChange={(e) => setdescription(e.target.value)}
+                height={"68px"}
+              />
             </Box>
 
             <Box>
@@ -118,13 +132,14 @@ function EditAttributePopup(props) {
               >
                 Data Type
               </FormLabel>
-              <Input
-                bg="#F2F4F7"
-                borderColor={"#D0D5DD"}
-                disabled
-                variant="outline"
-                placeholder="Outline"
-                value={"String"}
+              <CustomSelectDropDown
+                options={DataTypeOptions}
+                key={"Data Type"}
+                isSearchable={false}
+                useBasicStyles
+                multiInputValues={dataType}
+                setMultiInputValues={setdataType}
+                isMulti={false}
               />
             </Box>
             <Box display={"flex"} justifyContent={"space-between"}>
@@ -136,7 +151,10 @@ function EditAttributePopup(props) {
               >
                 Mark Attributes PII
               </Text>
-              <CustomSwitch />
+              <CustomSwitch
+                isChecked={markPII}
+                onChange={() => setmarkPII(!markPII)}
+              />
             </Box>
             <Box display={"flex"} justifyContent={"space-between"}>
               <Text
@@ -147,7 +165,10 @@ function EditAttributePopup(props) {
               >
                 Enable Status
               </Text>
-              <CustomSwitch />
+              <CustomSwitch
+                isChecked={enableStatus}
+                onChange={() => setenableStatus(!enableStatus)}
+              />
             </Box>
           </ModalBody>
           <ModalFooter
@@ -185,141 +206,42 @@ function EditAttributePopup(props) {
   );
 }
 
-export default EditAttributePopup;
+export default AddAttributePopup;
 
 const CustomSwitch = (props) => {
-    const customTheme = extendTheme({
-        colors: {
-          customColor: {
-            500: "#23CE6B", // You can replace this with your custom color
-          },
-        },
-      });
-  return  <ChakraProvider theme={customTheme}><Switch colorScheme="customColor" {...props}/></ChakraProvider> ;
+  const customTheme = extendTheme({
+    colors: {
+      customColor: {
+        500: "#23CE6B", // You can replace this with your custom color
+      },
+    },
+  });
+  return (
+    <ChakraProvider theme={customTheme}>
+      <Switch colorScheme="customColor" {...props} />
+    </ChakraProvider>
+  );
 };
 
-// export const CustomSelectDropDown = (props) => {
-//   const chakraStyles = {
-//     multiValue: (provided, state) => ({
-//       ...provided,
-//       backgroundColor: "#D8FFEA",
-//       borderRadius: "14px",
-//     }),
-
-//     multiValueLabel: (provided, state) => ({
-//       ...provided,
-//       margin: "-8px",
-//     }),
-//     crossIcon: (provided, state) => ({
-//       ...provided,
-//       margin: "0px",
-//       padding: "0px",
-//     }),
-//     option: (provided, state) => ({
-//       ...provided,
-//       _hover: { backgroundColor: "#F9FAFB" },
-//       backgroundColor: state.isSelected ? "#F9FAFB !important" : "#fff",
-//       background: "none",
-//       display: "flex",
-//       justifyContent: "space-between",
-//       flexDirection: "row-reverse",
-//       "span:nth-child(n)": { color: "#1DB056" },
-//     }),
-//   };
-
-//   const [selectedIndex, setSelectedIndex] = useState(0);
-
-//   const handleSelectChange = (e) => {
-//     props.setMultiInputValues(e.value);
-//     setSelectedIndex(e.index);
-//   };
-
-//   useEffect(() => {
-//     const indexItem = props?.options?.filter(
-//       (item) => props.selectedValue === item.value
-//     );
-//     setSelectedIndex(indexItem[0]?.index || 0);
-//   }, [selectedIndex]);
-
-//   const formatOptionLabel = ({ value, label, customAbbreviation }) => (
-//     <div style={{ display: "flex" }}>
-//       <div
-//         style={{
-//           padding: "2px 8px",
-//           //   backgroundColor: "rgba(216, 255, 234, 1)",
-//           borderRadius: "14px",
-//           fontSize: "16px",
-//           fontWeight: "500",
-//         }}
-//       >
-//         {label}
-//       </div>
-//     </div>
-//   );
-
-//   return (
-//     <>
-//       <RSelect
-//         placeholder="Select"
-//         formatOptionLabel={formatOptionLabel}
-//         // menuIsOpen={true}
-//         closeMenuOnSelect={false}
-//         hideSelectedOptions={false}
-//         selectedOptionStyle="check"
-//         chakraStyles={chakraStyles}
-//         onChange={handleSelectChange}
-//         defaultValue={[props?.multiInputValues[selectedIndex]]}
-//         {...props}
-//       />
-//     </>
-//   );
-// };
-
-// const StatusOptions = [
-//   {
-//     label: "Enabled",
-//     value: "Enabled",
-//     index: 0,
-//   },
-//   {
-//     label: "Disabled",
-//     value: "Disabled",
-//     index: 1,
-//   },
-// ];
-
-// const PIIOptions = [
-//   {
-//     label: "Defined",
-//     value: "Defined",
-//     index: 0,
-//   },
-//   {
-//     label: "Not Defined",
-//     value: "Not Defined",
-//     index: 1,
-//   },
-// ];
-
-// const DataTypeOptions = [
-//   {
-//     label: "String",
-//     value: "String",
-//     index: 0,
-//   },
-//   {
-//     label: "Boolean",
-//     value: "Boolean",
-//     index: 1,
-//   },
-//   {
-//     label: "Date",
-//     value: "Date",
-//     index: 3,
-//   },
-//   {
-//     label: "Number",
-//     value: "Number",
-//     index: 4,
-//   },
-// ];
+const DataTypeOptions = [
+  {
+    label: "String",
+    value: "String",
+    index: 0,
+  },
+  {
+    label: "Boolean",
+    value: "Boolean",
+    index: 1,
+  },
+  {
+    label: "Date",
+    value: "Date",
+    index: 3,
+  },
+  {
+    label: "Number",
+    value: "Number",
+    index: 4,
+  },
+];
