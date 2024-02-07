@@ -1,9 +1,10 @@
 import { Box, LinkBox, Text } from "@chakra-ui/react";
-import { Select as RSelect } from "chakra-react-select";
+import { CreatableSelect, Select as RSelect } from "chakra-react-select";
+
 import React from "react";
 
 function MultiSelectComponent(props) {
-//   console.log(props);
+  //   console.log(props);
   //       ? PROPS -->
   //       colorScheme="green"
   //       isClearable={false}
@@ -17,12 +18,24 @@ function MultiSelectComponent(props) {
   const handleSelectChange = (e) => {
     if (e.length <= props.selectLength) {
       props.setMultiInputValues(e);
-    }else{
-        // console.log("do nothing");
+    } else {
+      // console.log("do nothing");
     }
   };
 
   const chakraStyles = {
+    control: (provided, state) => ({
+      ...provided,
+      border: state.isFocused
+        ? "1px solid #072B15 !important"
+        : "1px solid #D0D5DD !important",
+      borderColor: "1px solid #072B15 !important",
+      boxShadow: "0 0 0 0px #072B15 !important",
+      "&:hover": {
+        border: "1px solid #072B15 !important",
+        boxShadow: "0px 0px 1px #072B15 !important",
+      },
+    }),
     multiValue: (provided, state) => ({
       ...provided,
       backgroundColor: "#D8FFEA",
@@ -58,8 +71,8 @@ function MultiSelectComponent(props) {
           padding: "2px 8px",
           backgroundColor: "rgba(216, 255, 234, 1)",
           borderRadius: "14px",
-          fontSize:"12px",
-          fontWeight:"500"
+          fontSize: "12px",
+          fontWeight: "500",
         }}
       >
         {label}
@@ -69,17 +82,31 @@ function MultiSelectComponent(props) {
 
   return (
     <Box width="280px">
-      <RSelect
-        formatOptionLabel={formatOptionLabel}
-        // menuIsOpen={true}
-        closeMenuOnSelect={false}
-        hideSelectedOptions={false}
-        selectedOptionStyle="check"
-        chakraStyles={chakraStyles}
-        onChange={handleSelectChange}
-        value={props.multiInputValues || ""}
-        {...props}
-      />
+      {props?.creatable ? (
+        <CreatableSelect
+          formatOptionLabel={formatOptionLabel}
+          // menuIsOpen={true}
+          closeMenuOnSelect={true}
+          hideSelectedOptions={false}
+          selectedOptionStyle="check"
+          chakraStyles={chakraStyles}
+          onChange={handleSelectChange}
+          value={props.multiInputValues || ""}
+          {...props}
+        />
+      ) : (
+        <RSelect
+          formatOptionLabel={formatOptionLabel}
+          // menuIsOpen={true}
+          closeMenuOnSelect={false}
+          hideSelectedOptions={false}
+          selectedOptionStyle="check"
+          chakraStyles={chakraStyles}
+          onChange={handleSelectChange}
+          value={props.multiInputValues || ""}
+          {...props}
+        />
+      )}
     </Box>
   );
 }

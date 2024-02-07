@@ -23,7 +23,6 @@ import SegmentAssociationCard from "./SegmentAssociationCard.jsx";
 import LeftFixedUserProfile from "./LeftFixedUserProfile.jsx";
 import DatePicker from "react-flatpickr";
 import MultiSelectComponent from "./MultiSelectComponent.jsx";
-import SelectCustom from "./CustomSelect.jsx";
 import SimpleDropDown from "./SimpleDropDown.jsx";
 import CheckBoxFilter from "./CheckBoxFilter/CheckBoxFilter.jsx";
 import SystemAttributesTablecomponent from "./systemAttributesTable/SystemAttributesTable.jsx";
@@ -32,6 +31,9 @@ import EditAttributePopup from "./editAttributePopup/EditAttributePopup.jsx";
 import TimeLineIntegration from "./TimeLineIntegration.jsx";
 import AddAttributePopup from "./addAttributePopup/AddAttributePopup.jsx";
 import DeleteAttributePopup from "./deleteAttributePopup/DeleteAttributePopup.jsx"
+import NotificationPopup from "./notificationPopup/NotificationPopup.jsx";
+import MyProfilePopup from "./myProfilePopup/MyProfilePopup.jsx";
+import ProfilePage from "./profilePage/ProfilePage.jsx";
 
 const theme = extendTheme({
   components: {
@@ -223,17 +225,19 @@ function App() {
           customCount={32323}
           staticCount={54654}
         /> */}
-        {/* <MultiSelectComponent
+        
+        <MultiSelectComponent
           colorScheme="green"
           isClearable={false}
           useBasicStyles
           setMultiInputValues={setMultiInputValues}
           isMulti
-          selectLength={1}
+          selectLength={20}
           multiInputValues={multiInputValues}
           options={Coloroptions}
           placeholder="Select"
-        /> */}
+        /> 
+
         {/* <SelectCustom /> */}
  
         {/* <LeftFixedUserProfile
@@ -258,14 +262,21 @@ function App() {
           setSelectedValue={setSelectedValue}
         /> */}
         {/* <SystemAttributesTablecomponent />
-        <FilterPopup />
-        <SelectCustom /> */}
+        <FilterPopup /> */}
         {/* <CheckBoxFilter options={options} setOptions={setOptions} /> */}
-        <TimeLineIntegration TimeLineData={timeLineData}/>
+        {/* <TimeLineIntegration TimeLineData={timeLineData}/> */}
 
-        <EditAttributePopup/>
-        <AddAttributePopup/>
-        <DeleteAttributePopup/>
+        {/* <EditAttributePopup/> */}
+        {/* <AddAttributePopup/> */}
+        {/* <DeleteAttributePopup/> */}
+        <br />
+        <br />
+        {/* <NotificationPopup children={<>hello</>} newNotification={true}/> */}
+        <br />
+        <br />
+        <br />
+        <ProfilePage/>
+        {/* <MyProfilePopup/> */}
       </div>
     </ChakraProvider>
   );
