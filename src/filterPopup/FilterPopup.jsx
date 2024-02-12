@@ -62,7 +62,7 @@ function FilterPopup() {
       >
         <ModalOverlay />
         <ModalContent>
-          <ModalHeader padding={"24px 32px"} fontSize={20} fontWeight={600}>
+          <ModalHeader padding={"24px 32px 16px 32px"} fontSize={20} fontWeight={600}>
             Filter
           </ModalHeader>
           <ModalCloseButton mt={2} color={"#101828"} />

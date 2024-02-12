@@ -36,6 +36,8 @@ export const CustomSelectDropDown = (props) => {
       props.setMultiInputValues(e.value);
       setSelectedIndex(e.index);
     };
+
+    console.log(selectedIndex, props.multiInputValues);
   
     useEffect(() => {
       const indexItem = props?.options?.filter(
@@ -66,6 +68,7 @@ export const CustomSelectDropDown = (props) => {
           placeholder="Select"
           formatOptionLabel={formatOptionLabel}
           // menuIsOpen={true}
+          value={[props?.multiInputValues[selectedIndex]]}
           closeMenuOnSelect={false}
           hideSelectedOptions={false}
           selectedOptionStyle="check"

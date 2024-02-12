@@ -30,10 +30,11 @@ function EditAttributePopup(props) {
   const [dataType, setdataType] = useState("");
   const [markPII, setmarkPII] = useState(false);
   const [enableStatus, setenableStatus] = useState(false);
+  const [markUniqueIdentifier, setMarkUniqueIdentifier] = useState(false);
 
   const handleCancelClick = () => {
     setdescription("");
-    markPII(false);
+    setmarkPII(false);
     setenableStatus(false);
     onClose();
   };
@@ -127,28 +128,40 @@ function EditAttributePopup(props) {
                 value={"String"}
               />
             </Box>
-            <Box display={"flex"} justifyContent={"space-between"}>
+            <Box borderRadius={"4px"} padding={"16px 12px"} display={"flex"} alignItems={"center"} border={"1px solid #D0D5DD"} justifyContent={"space-between"}>
               <Text
                 fontSize={14}
                 fontWeight={500}
-                marginBottom={"4px"}
                 color="#667085"
+                marginBottom={0}
               >
                 Mark Attributes PII
               </Text>
               <CustomSwitch />
             </Box>
-            <Box display={"flex"} justifyContent={"space-between"}>
+            <Box borderRadius={"4px"} padding={"16px 12px"} border={"1px solid #D0D5DD"} display={"flex"} alignItems={"center"} justifyContent={"space-between"}>
               <Text
+                marginBottom={0}
                 fontSize={14}
                 fontWeight={500}
-                marginBottom={"4px"}
                 color="#667085"
               >
                 Enable Status
               </Text>
               <CustomSwitch />
             </Box>
+            {props.hasUniqueAttribute ? 
+            <Box borderRadius={"4px"} padding={"16px 12px"} border={"1px solid #D0D5DD"} display={"flex"} alignItems={"center"} justifyContent={"space-between"}>
+              <Text
+                marginBottom={0}
+                fontSize={14}
+                fontWeight={500}
+                color="#667085"
+              >
+                Mark Unique Identifier
+              </Text>
+              <CustomSwitch />
+            </Box>: "" }
           </ModalBody>
           <ModalFooter
             padding={"16px 32px"}

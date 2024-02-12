@@ -29,6 +29,7 @@ function SimpleDropDown(props) {
   return (
     <div>
       <Select
+        styles={{zindex:5}}
         options={props?.options}
         chakraStyles={chakraStyles}
         onChange={handleSelectChange}

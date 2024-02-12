@@ -17,7 +17,7 @@ const TimelineComponent = ({ TimeLineData, canExpand = true }) => {
   return (
     <Box width={"100%"}>
       <VStack textAlign="start" align="start" mb={5}>
-        <Box width={"100%"} zIndex={5}>
+        <Box width={"100%"}>
           <Box width={"100%"}>
             {TimeLineData?.map((item, index) => (
               <MilestoneItem
@@ -72,7 +72,7 @@ const MilestoneItem = ({
           }}
         >
           <Box width={"100%"}>
-            <Box style={{ display: "flex", gap: "16px" }}>
+            <Box style={{ display: "flex", gap: "16px", zIndex:-1 }}>
               <Text color={"#101828"} fontSize={14} fontWeight={500}>
                 {item.eventName}
               </Text>

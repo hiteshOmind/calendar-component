@@ -23,7 +23,7 @@ import SegmentAssociationCard from "./SegmentAssociationCard.jsx";
 import LeftFixedUserProfile from "./LeftFixedUserProfile.jsx";
 import DatePicker from "react-flatpickr";
 import MultiSelectComponent from "./MultiSelectComponent.jsx";
-import SimpleDropDown from "./SimpleDropDown.jsx";
+import SimpleDropDown from "./simpleDropDown/SimpleDropDown.jsx";
 import CheckBoxFilter from "./CheckBoxFilter/CheckBoxFilter.jsx";
 import SystemAttributesTablecomponent from "./systemAttributesTable/SystemAttributesTable.jsx";
 import FilterPopup from "./filterPopup/FilterPopup.jsx";
@@ -226,7 +226,7 @@ function App() {
           staticCount={54654}
         /> */}
         
-        <MultiSelectComponent
+        {/* <MultiSelectComponent
           colorScheme="green"
           isClearable={false}
           useBasicStyles
@@ -236,7 +236,7 @@ function App() {
           multiInputValues={multiInputValues}
           options={Coloroptions}
           placeholder="Select"
-        /> 
+        />  */}
 
         {/* <SelectCustom /> */}
  
@@ -256,22 +256,22 @@ function App() {
           editing={true}
         /> */}
         {/* <TableComponent /> */}
-        {/* <SimpleDropDown
+        <SimpleDropDown
           selectedValue={selectedValue}
           options={DWoptions}
           setSelectedValue={setSelectedValue}
-        /> */}
-        {/* <SystemAttributesTablecomponent />
-        <FilterPopup /> */}
-        {/* <CheckBoxFilter options={options} setOptions={setOptions} /> */}
-        {/* <TimeLineIntegration TimeLineData={timeLineData}/> */}
+        />
+         <SystemAttributesTablecomponent />
+        <FilterPopup /> 
+         <CheckBoxFilter options={options} setOptions={setOptions} /> 
+   <TimeLineIntegration TimeLineData={timeLineData}/>
 
-        {/* <EditAttributePopup/> */}
-        {/* <AddAttributePopup/> */}
-        {/* <DeleteAttributePopup/> */}
+        <EditAttributePopup/>
+        <AddAttributePopup/>
+        <DeleteAttributePopup/>
         <br />
         <br />
-        {/* <NotificationPopup children={<>hello</>} newNotification={true}/> */}
+        <NotificationPopup children={<>hello</>} newNotification={true}/>
         <br />
         <br />
         <br />

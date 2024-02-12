@@ -82,7 +82,7 @@ function MultiSelectComponent(props) {
 
   return (
     <Box width="280px">
-      {props?.creatable ? (
+      {props?.isCreatable ? (
         <CreatableSelect
           formatOptionLabel={formatOptionLabel}
           // menuIsOpen={true}

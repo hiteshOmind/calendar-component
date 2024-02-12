@@ -16,13 +16,12 @@ import {
   Switch,
   extendTheme,
   ChakraProvider,
-  Icon,
 } from "@chakra-ui/react";
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import { AddIcon } from "@chakra-ui/icons";
 import { CustomSelectDropDown } from "../customSelectDropDown/CustomSelectDropDown";
 
-function AddAttributePopup() {
+function AddAttributePopup(props) {
   const { isOpen, onOpen, onClose } = useDisclosure();
   const cancelRef = React.useRef();
 
@@ -104,8 +103,12 @@ function AddAttributePopup() {
             </Box>
 
             <Box display={"flex"} alignItems={"center"} gap="16px">
-                <Text fontSize={16} fontWeight={500}  color="#667085">Variable Name</Text>
-                <Text fontSize={16} fontWeight={500} color={"#101828"}>{labelName}</Text>
+              <Text fontSize={16} fontWeight={500} color="#667085">
+                Variable Name
+              </Text>
+              <Text fontSize={16} fontWeight={500} color={"#101828"}>
+                {labelName}
+              </Text>
             </Box>
             <Box>
               <FormLabel
@@ -142,34 +145,64 @@ function AddAttributePopup() {
                 isMulti={false}
               />
             </Box>
-            <Box display={"flex"} justifyContent={"space-between"}>
+            <Box
+              borderRadius={"4px"}
+              padding={"16px 12px"}
+              display={"flex"}
+              alignItems={"center"}
+              border={"1px solid #D0D5DD"}
+              justifyContent={"space-between"}
+            >
               <Text
                 fontSize={14}
                 fontWeight={500}
-                marginBottom={"4px"}
                 color="#667085"
+                marginBottom={0}
               >
                 Mark Attributes PII
               </Text>
-              <CustomSwitch
-                isChecked={markPII}
-                onChange={() => setmarkPII(!markPII)}
-              />
+              <CustomSwitch />
             </Box>
-            <Box display={"flex"} justifyContent={"space-between"}>
+            <Box
+              borderRadius={"4px"}
+              padding={"16px 12px"}
+              border={"1px solid #D0D5DD"}
+              display={"flex"}
+              alignItems={"center"}
+              justifyContent={"space-between"}
+            >
               <Text
+                marginBottom={0}
                 fontSize={14}
                 fontWeight={500}
-                marginBottom={"4px"}
                 color="#667085"
               >
                 Enable Status
               </Text>
-              <CustomSwitch
-                isChecked={enableStatus}
-                onChange={() => setenableStatus(!enableStatus)}
-              />
+              <CustomSwitch />
             </Box>
+            {props.hasUniqueAttribute ? (
+              <Box
+                borderRadius={"4px"}
+                padding={"16px 12px"}
+                border={"1px solid #D0D5DD"}
+                display={"flex"}
+                alignItems={"center"}
+                justifyContent={"space-between"}
+              >
+                <Text
+                  marginBottom={0}
+                  fontSize={14}
+                  fontWeight={500}
+                  color="#667085"
+                >
+                  Mark Unique Identifier
+                </Text>
+                <CustomSwitch />
+              </Box>
+            ) : (
+              ""
+            )}
           </ModalBody>
           <ModalFooter
             padding={"16px 32px"}

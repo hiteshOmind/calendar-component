@@ -13,6 +13,7 @@ import {
   PopoverTrigger,
   Popover,
   PopoverContent,
+  Button,
 } from "@chakra-ui/react";
 import Pagination from "../Pagination";
 import BurgerMenuImg from "./burgerMenu.svg";
@@ -274,11 +275,13 @@ const BurgerMenu = (props) => {
     <>
       <Popover {...props}>
         <PopoverTrigger>
-          <img
-            style={{ cursor: "pointer" }}
-            alt="burger menu"
-            src={BurgerMenuImg}
-          ></img>
+          <Button width={"fit-content"} bgColor={"#fff"} m={0} p={0} _hover={{bgColor:"#fff"}}>
+            <img
+              style={{ cursor: "pointer" }}
+              alt="burger menu"
+              src={BurgerMenuImg}
+            ></img>
+          </Button>
         </PopoverTrigger>
         <PopoverContent width="118px">
           <Box
